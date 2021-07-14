@@ -30,5 +30,3 @@ The cellxgene documentation has seven major sections:
 | [Code](code.md) | Links to the github repositories containing Cellxgene Desktop and Data Portal Code |
 | [Contact Us](contact-us.md) | How to get in touch with the cellxgene team to give us feedback, make feature requests, or file bugs. |
 
-
-

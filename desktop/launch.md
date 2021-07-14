@@ -4,7 +4,7 @@
 
 ### Quickstart
 
-Once you've [prepared your data]() for cellxgene, you can launch the app using
+Once you've [prepared your data](launch.md) for cellxgene, you can launch the app using
 
 ```text
 cellxgene launch mydataset.h5ad --open

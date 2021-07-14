@@ -8,7 +8,7 @@ Cellxgene's user interface organizes single cell data similarly to how it is org
 
 ![](../.gitbook/assets/image%20%2819%29.png)
 
-This highlights important cellxgene functionality: 
+This highlights important cellxgene functionality:
 
 ![Cellxgene essential buttons](../.gitbook/assets/image%20%289%29.png)
 

@@ -65,7 +65,7 @@ https://$host$request_uri
 }
 ```
 
-With respect to above Nginx config specification, one would start the browser using port 5007 and forward a request from [https://YOURHOSTNAME/cellxgene\_example](https://YOURHOSTNAME/cellxgene_example) to the cxg browser \([http://localhost:5007\](http://localhost:5007\)\). What is also added is basic\_auth that adds a login request with a username and password. The nginx.htpasswd file is generated using htpasswd. If you want to add additional browsers, this is done by just adding additional location stanzas and running the cxg on a different port. The additional location stanzas just need to be adapted accordingly \(proxy\_pass and sub\_filter lines\).
+With respect to above Nginx config specification, one would start the browser using port 5007 and forward a request from [https://YOURHOSTNAME/cellxgene\_example](https://YOURHOSTNAME/cellxgene_example) to the cxg browser \([http://localhost:5007\](http://localhost:5007%29%29.%20What%20is%20also%20added%20is%20basic_auth%20that%20adds%20a%20login%20request%20with%20a%20username%20and%20password.%20The%20nginx.htpasswd%20file%20is%20generated%20using%20htpasswd.%20If%20you%20want%20to%20add%20additional%20browsers,%20this%20is%20done%20by%20just%20adding%20additional%20location%20stanzas%20and%20running%20the%20cxg%20on%20a%20different%20port.%20The%20additional%20location%20stanzas%20just%20need%20to%20be%20adapted%20accordingly%20%28proxy_pass%20and%20sub_filter%20lines\).
 
 **Note regarding storage and memory on the EC2 instance \(if you implement using AWS\):**
 
