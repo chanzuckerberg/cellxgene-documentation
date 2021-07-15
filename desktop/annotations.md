@@ -2,7 +2,7 @@
 
 ## Creating annotations in cellxgene
 
-[Cellxgene Desktop]() enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
+Cellxgene Desktop enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
 
 ## Data lifecycle for annotations
 
@@ -73,7 +73,7 @@ anndata.obs = anndata.obs.join(new_annotations)
 
 ## Annotations by multiple users
 
-As described in the [hosted](self-hosting/) section, we do not officially support hosted or multi-user use of cellxgene. However, we recognize that the app is often adapted for this purpose, and have tried to provide a "safe path" for multi-user setups that avoids overwriting data.
+As described in [Self-Host cellxgene](self-hosting/), we do not officially support hosted or multi-user use of cellxgene. However, we recognize that the app is often adapted for this purpose, and have tried to provide a "safe path" for multi-user setups that avoids overwriting data.
 
 Specifying a single file name for multiple contributors will result in data overwriting. To avoid this, you can instead specify an output directory and allow cellxgene to assign filenames.
 
