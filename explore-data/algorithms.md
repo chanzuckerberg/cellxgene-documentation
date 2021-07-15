@@ -4,7 +4,7 @@ description: >-
   explanation of commonly used algorithms in single cell analysis
 ---
 
-# Algorithms
+# Algorithms used by Cellxgene
 
 ## Differential expression
 

@@ -6,9 +6,9 @@ description: A general overview of the portal and how to navigate it
 
 ## Find Data
 
-The [cellxgene Data Portal](https://cellxgene.cziscience.com/) is SaaS data publishing platform that is optimized for the access, exploration, and reuse of single cell data that adhere to a common, minimal schema that facilitates rapid, intuitive exploration, combination, and integration.
+The [cellxgene Data Portal](https://cellxgene.cziscience.com/) is SaaS data publishing platform that is optimized for finding, explorating, and reusing single cell data that adhere to a common, minimal schema that facilitates easy, intuitive exploration and integration.
 
-When enter the Data Portal, you land on the Collections Page, which lists the Collections hosted on the Data Portal and tissue, assay, disease, organism, and cell count metadata describing them. Each Collection describes a publication associated with one or more datasets.
+When entering the Data Portal, you land on the Collections Page, which lists the Collections hosted on the Data Portal and metadata that define the tissue, assay, disease, organism, and cell count for each collection. 
 
 ![Cellxgene home page](../.gitbook/assets/image%20%288%29.png)
 
@@ -20,13 +20,13 @@ Clicking on a Collection name sends you to that collection's page, which contain
 
 ![An example Collection from the Teichmann group](../.gitbook/assets/image%20%286%29.png)
 
-Each dataset is described by the same metadata available at the collection level. In addition, there are buttons \(far right\) that enable download and exploration of each dataset:
+Each dataset is described by the same metadata available at the collection level. In addition, two buttons \(far right\) enable each dataset to be downloaded and explored:
 
 ![Dataset entry in a collection page](../.gitbook/assets/image%20%283%29.png)
 
 ## ![](../.gitbook/assets/download.svg) Download Data
 
-Clicking the download button brings up a dialog that enables a dataset to be downloaded in `h5ad` \(AnnData v0.7\), `loom`, and `rds` \(Seurat v3\) formats. All datasets adhere to the cellxgene [single cell annotated data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/corpora_schema.md). Datasets can either be downloaded via the browser by clicking the blue download button or via your command link by pasting the provided curl command.
+Clicking the download button launches a dialog that enables a dataset to be downloaded in `h5ad` \(AnnData v0.7\), `loom`, and `rds` \(Seurat v3\) formats. All datasets adhere to the cellxgene [single cell annotated data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/corpora_schema.md). Datasets can either be downloaded via the browser by clicking the blue download button or via the command line by pasting the provided curl command.
 
 ![Download dialog box](../.gitbook/assets/image%20%285%29.png)
 

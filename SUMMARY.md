@@ -10,12 +10,11 @@
 ## Explore Data
 
 * [The Exploration Interface](explore-data/the-exploration-interface.md)
-* [Features](explore-data/features.md)
-* [Algorithms](explore-data/algorithms.md)
+* [How to Explore Data](explore-data/how-to-explore-data.md)
+* [Algorithms used by Cellxgene](explore-data/algorithms.md)
 
 ## Cellxgene Desktop <a id="desktop"></a>
 
-* [Overview](desktop/desktop-overview.md)
 * [Quick Start](desktop/quick-start.md)
 * [Install](desktop/install.md)
 * [Prepare Data](desktop/data-reqs.md)

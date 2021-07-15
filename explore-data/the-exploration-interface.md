@@ -4,7 +4,7 @@ description: Explaining the capabilities of the cellxgene's hosted and desktop e
 
 # The Exploration Interface
 
-Cellxgene's user interface organizes single cell data similarly to how it is organized in commonly used single cell data formats. On the left-hand side, you can find information about categorical sample metadata \(observations\). The right hand sidebar contains information about continuous observational metadata and variable metadata \(usually genes\). Finally in the center, you can find the embedding scatterplot, which displays each cell as a point.
+Cellxgene's user interface organizes single cell data similarly to how it is organized in single cell data formats. The left hand side displays sample metadata \(observations\). The right hand side contains variable metadata \(usually genes\). The center displays the embedding, where cell is a point. UMAP and tSNE are common embeddings, which place cells based on their local distances in gene expression space. Cells from spatial data can also be displayed using each cell's \(x, y\) coordinates.
 
 ![](../.gitbook/assets/image%20%2819%29.png)
 
@@ -24,4 +24,6 @@ The cellxgene toolbar buttons provide the following functionalities:
 6. **Clip outlier** values.
 7. **Undo**.
 8. **Redo**.
+
+The following section, [How to Explore Data](how-to-explore-data.md), describes how these features can be used in combination to analyze and explore single cell data.
 

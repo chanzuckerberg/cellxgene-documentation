@@ -2,7 +2,7 @@
 
 ## Creating annotations in cellxgene
 
-[Cellxgene Desktop](desktop-overview.md) enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
+[Cellxgene Desktop]() enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
 
 ## Data lifecycle for annotations
 
