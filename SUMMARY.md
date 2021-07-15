@@ -6,7 +6,7 @@
 
 * [Find, Download, and Explore Data](portal/data-portal.md)
 * [Upload and Publish Data](portal/publishing.md)
-* [Data we Accept](portal/data-accepted.md)
+* [Accepted Data Types](portal/data-accepted.md)
 
 ## Explore Data
 

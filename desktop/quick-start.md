@@ -2,7 +2,7 @@
 
 ### Overview
 
-Cellxgene Desktop Explorer is a tool in the cellxgene suite that enables collaborative exploratory analysis of single cell data and private data sharing. 
+Cellxgene Desktop Explorer is a tool in the cellxgene suite that enables collaborative exploratory analysis of single cell data and private data sharing.
 
 This page describes how to quickly get started with exploratory analysis on your local computer. Those interested in hosting cellxgene to enable your collaborators to explore data from their browser without needing to download the data file or install cellxgene should see [Self-Host Cellxgene](self-hosting/).
 

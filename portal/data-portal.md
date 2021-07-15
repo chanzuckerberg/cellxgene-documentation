@@ -8,7 +8,7 @@ description: A general overview of the portal and how to navigate it
 
 The [cellxgene Data Portal](https://cellxgene.cziscience.com/) is SaaS data publishing platform that is optimized for finding, explorating, and reusing single cell data that adhere to a common, minimal schema that facilitates easy, intuitive exploration and integration.
 
-When entering the Data Portal, you land on the Collections Page, which lists the Collections hosted on the Data Portal and metadata that define the tissue, assay, disease, organism, and cell count for each collection. 
+When entering the Data Portal, you land on the Collections Page, which lists the Collections hosted on the Data Portal and metadata that define the tissue, assay, disease, organism, and cell count for each collection.
 
 ![Cellxgene home page](../.gitbook/assets/image%20%288%29.png)
 
