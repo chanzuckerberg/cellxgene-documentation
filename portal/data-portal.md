@@ -6,11 +6,11 @@ description: A general overview of the portal and how to navigate it
 
 ## Find Data
 
-The [cellxgene Data Portal](https://cellxgene.cziscience.com/) is SaaS data publishing platform that is optimized for finding, exploring, and reusing single cell data that adhere to a common, minimal schema that facilitates easy, intuitive exploration and integration.
+The [cellxgene Data Portal](https://cellxgene.cziscience.com/) is SaaS data publishing platform that is optimized for finding, explorating, and reusing single cell data that adhere to a common, minimal schema that facilitates easy, intuitive exploration and integration.
 
 When entering the Data Portal, you land on the Collections Page, which lists the Collections hosted on the Data Portal and metadata that define the tissue, assay, disease, organism, and cell count for each collection.
 
-![Cellxgene home page](../.gitbook/assets/image%20%288%29.png)
+![Cellxgene Data Portal homepage](../.gitbook/assets/image%20%2811%29.png)
 
 {% hint style="info" %}
 **Note**: We are adding search and filter capability to the the Data Portal. For now, the current best way to find datasets from a particular author or tissue is to `CTRL + F` to find matching text on the page.
@@ -26,17 +26,17 @@ Each dataset is described by the same metadata available at the collection level
 
 ## ![](../.gitbook/assets/download.svg) Download Data
 
-Clicking the download button launches a dialog that enables a dataset to be downloaded in `h5ad` \(AnnData v0.7\), `loom`, and `rds` \(Seurat v3\) formats. All datasets adhere to the cellxgene [single cell annotated data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/corpora_schema.md). Datasets can either be downloaded via the browser by clicking the blue download button or via the command line by pasting the provided curl command.
+Clicking the download button launches a dialog that enables a dataset to be downloaded in `h5ad` \(AnnData v0.7\) and `rds` \(Seurat v3\) formats. All datasets adhere to the [cellxgene single cell annotated data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/schema.md). Datasets can either be downloaded via the browser by clicking the blue download button or via the command line by pasting the provided curl command.
 
-![Download dialog box](../.gitbook/assets/image%20%285%29.png)
+![Cellxgene Data Portal Download dialog](../.gitbook/assets/image%20%281%29.png)
 
 ## ![](../.gitbook/assets/explore.svg) Explore Data
 
 Clicking the explore button launches the Cellxgene Explorer in a new tab:
 
-![](../.gitbook/assets/cellxgene_colored_hcl.png)
+![cellxgene explorer instance](../.gitbook/assets/image%20%284%29.png)
 
-To learn how to explore and analyze a dataset using the Cellxgene Explorer, please see the [Explore Data](../explore-data/the-exploration-interface.md) section of this documentation.
+To learn how to explore and analyze a dataset using the Cellxgene Explorer, please see the [Explorer Tutorials](../explore-data/explorer-tutorials.md) section of this documentation.
 
 ## History
 
