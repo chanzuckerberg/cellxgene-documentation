@@ -28,7 +28,7 @@
 
 ---
 
-* [Contribute](contribute.md)
+* [Contribute Code](contribute.md)
 * [Community Extensions](community-extensions.md)
 * [Code](code.md)
 * [Contact Us](contact-us.md)
