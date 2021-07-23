@@ -11,7 +11,7 @@
 * [The Exploration Interface](explore-data/the-exploration-interface.md)
 * [How to Explore Data](explore-data/how-to-explore-data.md)
 * [Algorithms used by Cellxgene](explore-data/algorithms.md)
-* [Media Test](explore-data/media-test.md)
+* [Vignette Media Test](explore-data/media-test.md)
 
 ## Cellxgene Desktop <a id="desktop"></a>
 
