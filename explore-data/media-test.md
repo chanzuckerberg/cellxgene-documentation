@@ -6,7 +6,7 @@ description: >-
 
 # Vignette Media Test
 
-These are initial attempts designed only to demonstrate media types. Both the slideshow and the movie could be annotated to highlight the actions being taken. I've annotated the first slide of the slideshow to provide an example. 
+These are initial attempts designed only to demonstrate media types. Both the slideshow and the movie could be annotated to highlight the actions being taken. 
 
 The vignettes both demonstrate the cross-filter functionality of cellxgene, which enables you to explore how one categorical variable is distributed in terms of another. The below vignettes use the [tabula muris senis dataset](https://cellxgene.cziscience.com/e/48b37086-25f7-4ecd-be66-f5bb378e3aea.cxg/), which you can click to follow along, and explore which animals the liver sub-tissues were identified in.
 
