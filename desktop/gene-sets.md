@@ -1,6 +1,9 @@
 # Gene Sets
 
-Cellxgene Desktop enables cellxgene users to preload gene sets for exploration, and to create or modify gene sets while exploring data. This is particularly useful for recording cell type markers when [annotating cells](./annotations.md).This section explains how to format gene sets data for preloading of gene sets and where to find gene sets information after making changes in the explorer. To read more about how to use gene sets in the cellxgene interface, please see [Exploring Gene Expression](../explore-data/how-to-explore-data.md)
+Cellxgene Desktop enables cellxgene users to preload gene sets for exploration, and to create or modify gene sets while exploring data. This is particularly useful for recording cell type markers when [annotating cells](./annotations.md).
+This section explains how to format gene sets data for preloading of gene sets and where to find gene sets information after making changes in the explorer.
+
+To read more about how to use gene sets in the cellxgene interface, please see [Exploring Gene Expression](../explore-data/how-to-explore-data.md)
 
 ## Gene Sets Requirements
 
