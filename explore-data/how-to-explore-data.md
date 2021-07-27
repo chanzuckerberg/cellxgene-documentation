@@ -60,12 +60,12 @@ Cellxgene provides functionality to select cells based on gene expression \(i.e.
 
 ## Compare expression of multiple genes
 
-Cellxgene, allows for the display of bi-variate scatter plots which results in FACS like plots that can be used to examine expression of custom combinations of genes.To examine and compare the expression of multiple genes in cellxgene, one can:
+Cellxgene, allows for the display of bi-variate scatter plots which results in FACS like plots that can be used to examine expression of custom combinations of genes. To examine and compare the expression of multiple genes in cellxgene, one can:
 
 1. Select a gene to plot on the X axis
 2. Select a gene to plot on the Y axis
 
 ![](../.gitbook/assets/compare-genes.gif)
 
-You can also also color by one of these genes to view expression in either the embedding plot of the bi-variate scatter plot. Additionally, you can still make manual selections on the embedding plot, while the bi-variate plot is active \(in the example above, we select a particular cluster where we want to view the expression relationship between the first gene and the second gene\)
+You can also also color by one of these genes to view expression in either the embedding plot of the bi-variate scatter plot. Additionally, you can still make manual selections on the embedding plot, while the bi-variate plot is active \(in the example above, we select a particular cluster where we want to view the expression relationship between the first gene and the second gene\).
 
