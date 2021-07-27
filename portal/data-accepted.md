@@ -62,7 +62,7 @@ Cellxgene is a repository of single cell data built to maximize data reuse. This
   </tbody>
 </table>
 
-A more detailed summary of cellxgene's requirements can be found in the [Cellxgene Data Integration Schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/corpora_schema.md).
+A more detailed summary of cellxgene's requirements can be found in the [single-cell annotated data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/corpora_schema.md).
 
 If you have data that match **all** of these characteristics, publishing it on the data portal can help amplify its reuse! 
 
