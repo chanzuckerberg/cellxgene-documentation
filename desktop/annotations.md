@@ -34,7 +34,7 @@ There are two options for updating draft annotations.
 
 #### Autodetect annotations CSV
 
-Cellxgene will automatically find and reload your draft annotations in editable mode. This assumes that: 
+Cellxgene will automatically find and reload your draft annotations in editable mode. This assumes that:
 
 1. The h5ad filename is the same.
 2. You launch cellxgene from the `annotations-directory` \(i.e., the directory that contains your CSV\).

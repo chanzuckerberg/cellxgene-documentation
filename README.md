@@ -19,9 +19,9 @@ Cellxgene enables scientists to analyze, annotate, find, download, and explore s
     <tr>
       <td style="text-align:left">Analyze &amp; Annotate Private Data</td>
       <td style="text-align:left">
-        <p><a href="desktop/install.md">Install cellxgene</a> 
+        <p><a href="desktop/install.md">Install cellxgene</a>
         </p>
-        <p><a href="portal/data-portal.md#download">Download an example dataset</a> 
+        <p><a href="portal/data-portal.md#download">Download an example dataset</a>
         </p>
         <p>Learn how to <a href="explore-data/how-to-explore-data.md">analyze</a> and
           <a
@@ -58,7 +58,7 @@ Cellxgene enables scientists to analyze, annotate, find, download, and explore s
 
 ## Get involved
 
-**Cellxgene is an open-source project built for the cell biology community.** We greatly value contributions and feedback on how we can improve cellxgene. Here's how you can get involved: 
+**Cellxgene is an open-source project built for the cell biology community.** We greatly value contributions and feedback on how we can improve cellxgene. Here's how you can get involved:
 
 | Section | Purpose |
 | :--- | :--- |
