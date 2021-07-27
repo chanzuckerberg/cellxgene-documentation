@@ -20,6 +20,7 @@
 * [Prepare Data](desktop/data-reqs.md)
 * [Launch](desktop/launch.md)
 * [Annotate Data](desktop/annotations.md)
+* [Gene Sets](desktop/gene-sets.md)
 * [Self-Host Cellxgene](desktop/self-hosting/README.md)
   * [AWS/Linux server with basic authentication](desktop/self-hosting/nginx.md)
   * [Cellxgene Gateway/Apache2 Reverse Proxy with Authentication](desktop/self-hosting/cellxgene-gateway-proxy.md)
