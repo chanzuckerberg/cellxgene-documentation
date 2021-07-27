@@ -64,5 +64,5 @@ Cellxgene enables scientists to analyze, annotate, find, download, and explore s
 | :--- | :--- |
 | [Contact Us](contact-us.md) | How to get in touch with the cellxgene team to give us feedback, make feature requests, or file bugs. |
 | [Contribute](contribute.md) | How to contribute to the cellxgene project. |
-| [Community Extensions](community-extensions.md) | Cellxgene is MIT licensed, and free to reuse. See how our user community has extended cellxgene. |
+| [Community Extensions](community-extensions.md) | Cellxgene is MIT licensed, and free to reuse. See how the cell biology community has extended cellxgene. |
 
