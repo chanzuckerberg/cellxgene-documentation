@@ -51,7 +51,7 @@ Cellxgene enables scientists to analyze, annotate, find, download, and explore s
       <td style="text-align:left">Explore &amp; Analyze Public Datasets</td>
       <td style="text-align:left"><a href="portal/data-portal.md#explore-data">Exploring data</a>
       </td>
-      <td style="text-align:left">Data PortalC</td>
+      <td style="text-align:left">Data Portal</td>
     </tr>
   </tbody>
 </table>
