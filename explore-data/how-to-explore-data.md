@@ -8,6 +8,38 @@ You can follow any of these tutorials if you've installed the Cellxgene Desktop 
 cellxgene launch https://cellxgene-example-data.czi.technology/tabula-muris.h5ad
 ```
 
+## Explore gene expression
+
+Gene expression is explored in cellxgene using _gene sets_. A gene set is a user-created, ordered list of one or more gene identifiers. Gene sets show the expression of each member gene and the average expression of all genes in the set. This makes gene sets ideal for describing cell type markers, cell state markers, or biological pathways.
+
+### Create a gene set
+
+To create a gene set, click "Create new.", name your gene set, add an optional description, and add a comma separated list of genes.
+
+![](../.gitbook/assets/create_a_gene_set.png)
+
+### Edit a gene set
+
+Cellxgene enables editing of the gene set name and description.
+
+![](../.gitbook/assets/edit_a_gene_set.png)
+
+Users may also add additional genes to the gene set by clicking the plus button next to the name of the gene set.
+
+### Selecting subsets of cells using gene sets
+
+Users can select cells by dragging across a portion of the expression distribution for either member genes or the complete gene set.
+
+![](../.gitbook/assets/gene_set_selection.png)
+
+### Gene Sets Requirements
+
+Gene sets have simple requirements: A gene set must have a unique name. A given gene may be included in multiple gene sets. Each gene can be annotated with a description, to provide more information about what it describes.
+
+{% hint style="info" %}
+[Cellxgene Desktop](../desktop/quick-start.md) users can also pre-load gene sets, and changes to gene sets or newly created gene sets will be saved to a CSV file for easy export of results. [Learn more about cellxgene desktop gene sets functionality.](../desktop/gene-sets.md)
+{% endhint %}
+
 ## Cross-filter cells and color by metadata
 
 Categorical metadata can be used not only to color cells in the embedding scatterplot, but also to examine the representation of a particular metadata across other metadata fields. For example:
