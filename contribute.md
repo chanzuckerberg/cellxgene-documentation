@@ -52,5 +52,5 @@ Please submit any direct contributions via a Pull Request. It'd be great for PRs
 
 ### Contributing documentation
 
-This documentation is written using [gitbook](https://www.gitbook.com/). Feel free to [fork our docs repo](https://github.com/maximilianLombardo/cellxgene-docs/tree/master) and submit a pull request if you would like to contribute documentation or suggest edits to our documentation.
+This documentation is written using [gitbook](https://www.gitbook.com/). Feel free to [fork our docs repo](https://github.com/chanzuckerberg/cellxgene-documentation) and submit a pull request if you would like to contribute documentation or suggest edits to our documentation.
 
