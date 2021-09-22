@@ -73,7 +73,8 @@ We are planning to develop the following features on the Data Portal application
     </tr>
     <tr>
       <td style="text-align:left">2022</td>
-      <td style="text-align:left">Protein &amp; splicing data support</td>
+      <td style="text-align:left"><a href="https://app.zenhub.com/workspaces/single-cell-5e2a191dad828d52cc78b028/issues/chanzuckerberg/single-cell/57">Protein &amp; splicing data support</a>
+      </td>
       <td style="text-align:left">Users can publish and explore datasets that contain multiple data modalities
         (i.e. Protein &amp; mRNA).</td>
       <td style="text-align:center">1, 2</td>
