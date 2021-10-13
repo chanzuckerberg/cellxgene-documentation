@@ -29,7 +29,6 @@
 
 ***
 
-* [Contact Us](contact-us.md)
 * [Roadmap](roadmap.md)
 * [Contribute Code](contribute.md)
 * [Community Extensions](community-extensions.md)
