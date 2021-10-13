@@ -1,18 +1,18 @@
 # Table of contents
 
-* [Cellxgene](README.md)
+* [cellxgene](README.md)
 
-## Data Portal <a id="portal"></a>
+## Data Portal <a href="portal" id="portal"></a>
 
 * [Find, Download, and Explore Data](portal/data-portal.md)
+* [Upload and Publish Data](portal/publishing.md)
 
 ## Explore Data
 
-* [The Exploration Interface](explore-data/the-exploration-interface.md)
-* [How to Explore Data](explore-data/how-to-explore-data.md)
+* [Tutorials](explore-data/explorer-tutorials.md)
 * [Algorithms used by Cellxgene](explore-data/algorithms.md)
 
-## Cellxgene Desktop <a id="desktop"></a>
+## Cellxgene Desktop <a href="desktop" id="desktop"></a>
 
 * [Quick Start](desktop/quick-start.md)
 * [Install](desktop/install.md)
@@ -27,11 +27,10 @@
   * [Heroku](desktop/self-hosting/heroku.md)
 * [Troubleshooting](desktop/faq.md)
 
----
+***
 
-* [Contact Us](contact-us.md)
 * [Roadmap](roadmap.md)
 * [Contribute Code](contribute.md)
 * [Community Extensions](community-extensions.md)
-* [Github](github.md)
-
+* [Code](code.md)
+* [Contact Us](contact-us.md)

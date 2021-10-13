@@ -2,7 +2,7 @@
 
 ## Creating annotations in cellxgene
 
-Cellxgene Desktop enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
+[Cellxgene Desktop](annotations.md) enables users to create and edit categorical annotations within the app. This is commonly used to annotate cell types of data being analyzed for the first time.
 
 ## Data lifecycle for annotations
 
@@ -36,9 +36,9 @@ There are two options for updating draft annotations.
 
 Cellxgene will automatically find and reload your draft annotations in editable mode. This assumes that:
 
-1. The h5ad filename is the same.
-2. You launch cellxgene from the `annotations-directory` \(i.e., the directory that contains your CSV\).
-3. You use the same browser and have not cleared your cookies \(we use a small cookie to keep track of which user created the file to avoid accidental overwrites; see FAQ\).
+1 - The h5ad filename is the same  
+2 - You launch cellxgene from the `annotations-directory` \(i.e., the directory that contains your CSV\)  
+3 - You use the same browser and have not cleared your cookies \(we use a small cookie to keep track of which user created the file to avoid accidental overwrites; see FAQ\)
 
 #### Specify an annotations CSV
 
@@ -73,7 +73,7 @@ anndata.obs = anndata.obs.join(new_annotations)
 
 ## Annotations by multiple users
 
-As described in [Self-Host cellxgene](self-hosting/), we do not officially support hosted or multi-user use of cellxgene. However, we recognize that the app is often adapted for this purpose, and have tried to provide a "safe path" for multi-user setups that avoids overwriting data.
+As described in the [hosted](self-hosting/) section, we do not officially support hosted or multi-user use of cellxgene. However, we recognize that the app is often adapted for this purpose, and have tried to provide a "safe path" for multi-user setups that avoids overwriting data.
 
 Specifying a single file name for multiple contributors will result in data overwriting. To avoid this, you can instead specify an output directory and allow cellxgene to assign filenames.
 

@@ -2,7 +2,7 @@
 description: make sure to chat with arathi on the location of this
 ---
 
-# Contribute Code
+# Contribute
 
 ## Code of conduct
 

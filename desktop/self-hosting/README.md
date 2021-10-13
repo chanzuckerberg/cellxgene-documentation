@@ -10,6 +10,10 @@ Cellxgene desktop is intended to be used by researchers on their local machines.
 
 We don't officially support web deployment, but we've offered some guidance in the following sections on ways to deploy cellxgene to the web.
 
+{% hint style="info" %}
+We are developing the [Data Portal](../../portal/publishing.md) to support private sharing, however publishing is not yet widely available.
+{% endhint %}
+
 ### General notes and cautions
 
 Please consider the following when deploying cellxgene in any "hosted" environment, especially where access from the broader Internet is possible:
