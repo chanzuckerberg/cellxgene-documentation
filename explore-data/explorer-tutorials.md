@@ -4,11 +4,11 @@
 
 You can follow any of these tutorials by launching an instance of the cellxgene hosted explorer with the tabula sapiens using [this hosted explorer link](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/) (alternatively you can view the [Tabula Sapiens Collection](https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5) on Cellxgene Data Portal and launch the hosted explorer for the all cells atlas using the explore ![](../.gitbook/assets/explore.svg) icon). For more information on Tabula Sapiens, you can refer to [the preprint on biorxiv](https://www.biorxiv.org/content/10.1101/2021.07.19.452956v1).
 
-For any of the tutorials below, use ![](../.gitbook/assets/image.png)  to view the slides in fullscreen.
+For any of the tutorials below, use ![](../.gitbook/assets/image.png) to view the slides in fullscreen.
 
 ## Cellxgene Explorer Interface
 
-**Description:** Cellxgene's user interface organizes single cell data similarly to how it is organized in single cell data formats. The left hand side displays categorical and numerical sample metadata. The right hand side is a space for displaying features such as genes and gene sets. The center displays the embedding, where each cell is a point. UMAP and tSNE are common embeddings, which place cells based on their local distances in gene expression space. Cells from spatial data can also be displayed using each cell's (x, y) coordinates. Here is more complete overview of the cellxgene interface in both the hosted and desktop explorer.
+**Description:** cellxgene's user interface organizes single cell data similarly to how it is organized in single cell data formats. The left hand side displays categorical and numerical sample metadata. The right hand side is a space for displaying features such as genes and gene sets. The center displays the embedding, where each cell is a point. UMAP and tSNE are common embeddings, which place cells based on their local distances in gene expression space. Cells from spatial data can also be displayed using each cell's (x, y) coordinates. Here is more complete overview of the cellxgene interface in both the hosted and desktop explorer.
 
 **Key Concepts: **user interface explanation
 
@@ -22,31 +22,25 @@ An introduction to the cellxgene explorer interface
 
 **Description: **Categorical metadata (such as tissue of origin or cell type) can be used in a number of ways within cellxgene including coloring embedding plots (i.e. color UMAP by cell type), looking at cell counts, within a categorical metadata field, making selections of cells or viewing the interaction between different categorical metadata fields.
 
-**Key Concepts:** categorical metadata, selecting cells by category (i.e. cell type), interaction between categorical metadata fields 
+**Key Concepts:** categorical metadata, selecting cells by category (i.e. cell type), interaction between categorical metadata fields
 
 **Follow along**: [Tabula Sapiens on cellxgene data portal](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/)
 
 {% embed url="https://docs.google.com/presentation/d/1fxuuzhiaYbMdG2NiHgN5-vxeQHwEjWVOSi4VmCAP1L0/edit?usp=sharing" %}
 
-
-
 ## Find Cells Where a gene is expressed
 
 **Description: **Numerical metadata (such gene expression features or QC metrics such as number of genes) can be examined on the embedding plot and be used to filter and select cells. Additionally tools like the clip tool can give us control over how these attributes are displayed on the embedding plot.
 
-**Key Concepts:** numerical metadata, cell filtering and selection, interaction between numerical metadata categorical metadata fields 
+**Key Concepts:** numerical metadata, cell filtering and selection, interaction between numerical metadata categorical metadata fields
 
 **Follow along**: [Tabula Sapiens on cellxgene data portal](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/)
 
 {% embed url="https://docs.google.com/presentation/d/13c0Nj_kR32j0hNL0uZG_4cl646N_TH3ADaQzZFqDPBI/edit?usp=sharing" %}
 
-
-
-
-
 ## Selecting and Subsetting Cells
 
-**Description: **Cellxgene allows for the complex selection of cells via selection directly on the embedding, gene expression cutoffs, and based on categorical metadata attributes.
+**Description:** Cellxgene allows for the complex selection of cells via selection directly on the embedding, gene expression cutoffs, and based on categorical metadata attributes.
 
 **Key Concepts:** categorical metadata selection, numerical metadata selection, complex selection (combining selection methods)
 
@@ -54,11 +48,9 @@ An introduction to the cellxgene explorer interface
 
 {% embed url="https://docs.google.com/presentation/d/1T5fLkecZziuo6qUfAam1FmSYKhx-Ln9ytpqccjX8j2o/edit?usp=sharing" %}
 
-
-
 ## Compare Expression of Multiple Genes
 
-**Description: **Cellxgene allows you to compare the expression of multiple genes via bivariate plots.
+**Description:** Cellxgene allows you to compare the expression of multiple genes via bivariate plots.
 
 **Key Concepts:** gene expression, co-expression, cell selection, subsetting
 
@@ -68,7 +60,7 @@ An introduction to the cellxgene explorer interface
 
 ## Using Gene Sets to learn about cell population functional characteristics
 
-**Description: **Cellxgene allows you to examine groups of genes via the gene sets feature
+**Description:** Cellxgene allows you to examine groups of genes via the gene sets feature
 
 **Key Concepts:** gene expression, co-expression, cell selection, subsetting
 
@@ -89,8 +81,6 @@ ACAA1, ACAA2, ACADL, ACADM, ACADS, ACADSB, ACADVL, ACAT1, ACAT2, ACOX1, ACOX3, A
 **Follow along**: [Tabula Sapiens on cellxgene data portal](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/)
 
 {% embed url="https://docs.google.com/presentation/d/1J0QbINEeHWXNGLwj0dV7PaKCoZn3TRjE3Z2qYydr960/edit?usp=sharing" %}
-
-
 
 {% hint style="info" %}
 **Note**: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells (i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
