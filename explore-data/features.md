@@ -2,9 +2,7 @@
 
 [Cellxgene Desktop](../desktop/quick-start.md) and [Data Portal](../portal/data-portal.md) have common UI that enables exploration and interrogation of single cell data. This section describes cellxgene's data exploration features.
 
-{% hint style="info" %}
-While most features are shared, [Annotation](../desktop/annotations.md) is only available on Cellxgene Desktop.
-{% endhint %}
+> While most features are shared, [Annotation](../desktop/annotations.md) is only available on Cellxgene Desktop.
 
 ## Cross-filter cells and color by metadata
 
@@ -27,13 +25,9 @@ Differential expression can be run between selections of two different groups of
 
 ![](../.gitbook/assets/diffexp.gif)
 
-{% hint style="info" %}
-**Note**: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells \(i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000\). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
-{% endhint %}
+> **Note**: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells \(i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000\). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
 
-{% hint style="info" %}
-**Note**: You can find more information [here](algorithms.md#differential-expression) about how our differential expression is calculated. In brief, we use a Welch's t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the _most_ differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
-{% endhint %}
+> **Note**: You can find more information [here](algorithms.md#differential-expression) about how our differential expression is calculated. In brief, we use a Welch's t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the _most_ differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
 
 ## See how metadata and gene expression break down across different categories
 

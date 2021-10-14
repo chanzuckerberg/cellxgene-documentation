@@ -12,9 +12,7 @@ When entering the Data Portal, you land on the Collections Page, which lists the
 
 ![Cellxgene Data Portal homepage](../.gitbook/assets/image%20%2811%29.png)
 
-{% hint style="info" %}
-**Note**: We are adding search and filter capability to the the Data Portal. For now, the current best way to find datasets from a particular author or tissue is to `CTRL + F` to find matching text on the page.
-{% endhint %}
+> **Note**: We are adding search and filter capability to the the Data Portal. For now, the current best way to find datasets from a particular author or tissue is to `CTRL + F` to find matching text on the page.
 
 Clicking on a Collection name sends you to that collection's page, which contains a description, key links, and the datasets of the Collection:
 

@@ -64,10 +64,6 @@ https://docs.google.com/presentation/d/1ihFrKRSxnfFNexctOZ0EkUow9SWgEr-9TOVKvVLE
 
 https://docs.google.com/presentation/d/1J0QbINEeHWXNGLwj0dV7PaKCoZn3TRjE3Z2qYydr960/edit?usp=sharing
 
-{% hint style="info" %}
-**Note**: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells (i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
-{% endhint %}
+> **Note**: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells (i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
 
-{% hint style="info" %}
-**Note**: You can find more information [here](algorithms.md#differential-expression) about how our differential expression is calculated. In brief, we use a Welch's t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the _most_ differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
-{% endhint %}
+> **Note**: You can find more information [here](algorithms.md#differential-expression) about how our differential expression is calculated. In brief, we use a Welch's t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the _most_ differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
