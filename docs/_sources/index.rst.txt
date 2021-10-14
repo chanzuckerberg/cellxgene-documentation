@@ -1,7 +1,7 @@
 cellxgene
 =========
 
-.. figure:: .gitbook/assets/image%20(12).png
+.. figure:: .gitbook/assets/cellxgene_colored_hcl.png
    :alt: cellxgene explorer
 
    cellxgene explorer
