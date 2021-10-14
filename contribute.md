@@ -2,8 +2,6 @@
 
 ## Code of conduct
 
-We warmly welcome contributions from the community!
-
 To ensure a welcoming experience for our entire community, this project adheres to the Contributor Covenant [code of conduct](https://github.com/chanzuckerberg/.github/tree/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [opensource@chanzuckerberg.com](mailto:opensource@chanzuckerberg.com).
 
 If you have any questions about any of this stuff, just ask! :\)
@@ -14,14 +12,17 @@ We'd love to hear from you! Please submit any bug reports and feature requests t
 
 ## Direct contributions
 
+We warmly welcome contributions from the community to our [cellxgene Desktop repository](https://github.com/chanzuckerberg/cellxgene)! If you have an idea for a contribution, we encourage you to open a [github issue](https://github.com/chanzuckerberg/cellxgene/issues) to discuss your idea with our team and other community members. If your idea solves a problem for a large number of users and is aligned with core cellxgene functionality, our developers will be happy to work with you to hash out details and decisions ahead of time. Performance, usability, and extensibility are central to our application, and merging a PR will likely require a few rounds of revision with our developers.
+
+If you have a very specific problem you are trying to solve, we encourage you to fork our repo and make updates there.
+
+We are not currently accepting community PRs for [cellxgene Data Portal](https://cellxgene.cziscience.com/).
+
 ### Getting started
 
 If you are interested in working on `cellxgene` development, you'll need to use git to make a copy of the [project repository](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks) and share your changes.
 
-We have several "rules" \(strong suggestions really\) for contributions:
-
-1. If your contribution is complex, adds new features, new UI design or otherwise warrants discussion, we highly recommend that you submit a github issue, and engage other contributors in a discussion about the details of your proposed PR. This will save you time in the long run, as many details and decisions can be hashed out ahead-of-time.
-2. Please submit any direct contributions by [forking the repository](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks), creating a feature branch, and [submitting a Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+Please submit any direct contributions by [forking the repository](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks), creating a feature branch, and [submitting a Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 First, you'll need the following installed on your machine
 
@@ -48,5 +49,5 @@ Please submit any direct contributions via a Pull Request. It'd be great for PRs
 
 ### Contributing documentation
 
-This documentation is written using [gitbook](https://www.gitbook.com/). Feel free to [fork our docs repo](https://github.com/chanzuckerberg/cellxgene-documentation) and submit a pull request if you would like to contribute documentation or suggest edits to our documentation.
+Feel free to [fork our docs repo](https://github.com/chanzuckerberg/cellxgene-documentation) and submit a pull request if you would like to contribute documentation or suggest edits to our documentation.
 
