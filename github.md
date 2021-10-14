@@ -2,13 +2,12 @@
 
 ## Cellxgene Explorer
 
-{% embed url="https://github.com/chanzuckerberg/cellxgene" caption="" %}
+https://github.com/chanzuckerberg/cellxgene
 
 ## Cellxgene Data Portal
 
-{% embed url="https://github.com/chanzuckerberg/corpora-data-portal" caption="" %}
+https://github.com/chanzuckerberg/corpora-data-portal
 
 ## Cellxgene Schema and Validation
 
-{% embed url="https://github.com/chanzuckerberg/single-cell-curation" caption="" %}
-
+https://github.com/chanzuckerberg/single-cell-curation

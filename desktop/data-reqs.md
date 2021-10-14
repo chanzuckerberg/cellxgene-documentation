@@ -1,7 +1,3 @@
----
-description: How to format your data for use with cellxgene
----
-
 # Prepare Data
 
 ## Data format requirements
