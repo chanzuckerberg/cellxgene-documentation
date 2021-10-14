@@ -114,6 +114,8 @@ The cellxgene documentation has the following major sections:
    :maxdepth: 2
    :caption: Contents:
 
+   annotating-data.md
+
 
 
 Indices and tables

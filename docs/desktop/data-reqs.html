@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Prepare Data &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="prepare-data">
+<h1>Prepare Data<a class="headerlink" href="#prepare-data" title="Permalink to this headline">¶</a></h1>
+<section id="data-format-requirements">
+<h2>Data format requirements<a class="headerlink" href="#data-format-requirements" title="Permalink to this headline">¶</a></h2>
+<p>If your data is an <a class="reference external" href="https://anndata.readthedocs.io"><code class="docutils literal notranslate"><span class="pre">h5ad</span></code></a> file and meets the following requirements, you can go straight to <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span></code>.</p>
+<ul class="simple">
+<li><p>Matrix data (usually raw or normalized expression values) in <code class="docutils literal notranslate"><span class="pre">anndata.X</span></code></p></li>
+<li><p>At least one embedding (e.g., tSNE, UMAP) in <code class="docutils literal notranslate"><span class="pre">anndata.obsm</span></code>, specified with the prefix <code class="docutils literal notranslate"><span class="pre">X_</span></code> (e.g., by default scanpy stores UMAP coordinates in <code class="docutils literal notranslate"><span class="pre">anndata.obsm['X_umap']</span></code>)</p></li>
+<li><p>A unique identifier is required for each cell, which by default will be pulled from the <code class="docutils literal notranslate"><span class="pre">obs</span></code> DataFrame index. If the index is not unique or does not contain the cell ID, an alternative column can be specified with <code class="docutils literal notranslate"><span class="pre">--obs-names</span></code></p></li>
+<li><p>A unique identifier is required for each gene, which by default will be pulled from the <code class="docutils literal notranslate"><span class="pre">var</span></code> DataFrame index. If the index is not unique or does not contain the gene ID, an alternative column can be specified with <code class="docutils literal notranslate"><span class="pre">--var-names</span></code></p></li>
+</ul>
+<section id="what-about-r-objects-from-seurat-or-bioconductor">
+<h3>What about R objects from Seurat or Bioconductor!?<a class="headerlink" href="#what-about-r-objects-from-seurat-or-bioconductor" title="Permalink to this headline">¶</a></h3>
+<p>You can use <a class="reference external" href="https://github.com/cellgeni/sceasy">sceasy</a> to convert to <code class="docutils literal notranslate"><span class="pre">h5ad</span></code>. Seurat also has <a class="reference external" href="https://satijalab.org/seurat/v3.0/conversion_vignette.html">conversion tools</a> that you can try.</p>
+</section>
+<section id="can-i-use-data-hosted-on-the-web-somewhere">
+<h3>Can I use data hosted on the web somewhere?<a class="headerlink" href="#can-i-use-data-hosted-on-the-web-somewhere" title="Permalink to this headline">¶</a></h3>
+<p>Yes! You can launch from a URL instead of a filepath. The same data format requirements apply. Please see <a class="reference internal" href="launch.html"><span class="doc std std-doc">here</span></a> for more details.</p>
+</section>
+</section>
+<section id="data-format-options">
+<h2>Data format options<a class="headerlink" href="#data-format-options" title="Permalink to this headline">¶</a></h2>
+<section id="category-colors">
+<h3>Category colors<a class="headerlink" href="#category-colors" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cellxgene</span></code> will display <a class="reference external" href="https://github.com/chanzuckerberg/cellxgene/issues/1152#issue-564361541">scanpy-style color information</a> for category-label pairs. An example of this format is shown below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; category = &quot;louvain&quot;
+&gt;&gt;&gt; # colors stored in adata.uns must be matplotlib-compatible color information
+&gt;&gt;&gt; adata.uns[f&quot;{category}_colors&quot;]
+array([&#39;#1f77b4&#39;, &#39;#ff7f0e&#39;, &#39;#2ca02c&#39;, &#39;#d62728&#39;, &#39;#9467bd&#39;, &#39;#8c564b&#39;, &#39;#e377c2&#39;, &#39;#bcbd22&#39;], dtype=&#39;&gt;&gt; # there must be a matching category in adata.obs
+&gt;&gt;&gt; category in adata.obs
+True
+</pre></div>
+</div>
+<p>To test that you’ve done this properly, check that for your given <code class="docutils literal notranslate"><span class="pre">category</span></code> the number of colors match the number of category values and that the second command below results in a mapping from categories to colors.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; len(adata.obs[category].cat.categories) == len(adata.uns[f&quot;{category}_colors&quot;])
+True
+&gt;&gt;&gt; dict(zip(adata.obs[category].cat.categories, adata.uns[f&quot;{category}_colors&quot;]))
+{&#39;CD4 T cells&#39;: &#39;#1f77b4&#39;, &#39;CD14+ Monocytes&#39;: &#39;#ff7f0e&#39;, &#39;B cells&#39;: &#39;#2ca02c&#39;, &#39;CD8 T cells&#39;: &#39;#d62728&#39;, &#39;NK cells&#39;: &#39;#9467bd&#39;, &#39;FCGR3A+ Monocytes&#39;: &#39;#8c564b&#39;, &#39;Dendritic cells&#39;: &#39;#e377c2&#39;, &#39;Megakaryocytes&#39;: &#39;#bcbd22&#39;}
+</pre></div>
+</div>
+<p>You can disable this feature using the <code class="docutils literal notranslate"><span class="pre">--disable-custom-colors</span></code> flag for <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span></code>. cellxgene will then chose colors from its standard color palettes.</p>
+</section>
+</section>
+<section id="using-cellxgene-prepare">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code><a class="headerlink" href="#using-cellxgene-prepare" title="Permalink to this headline">¶</a></h2>
+<p>If you need to normalize your data and create an embedding, <code class="docutils literal notranslate"><span class="pre">cellxgene</span></code> can do that for you with the <code class="docutils literal notranslate"><span class="pre">prepare</span></code> command.</p>
+<section id="what-is-cellxgene-prepare">
+<h3>What is <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code>?<a class="headerlink" href="#what-is-cellxgene-prepare" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code> offers an easy command line interface (CLI) to preliminarily wrangle your data into the required format for previewing it with cellxgene. It runs <code class="docutils literal notranslate"><span class="pre">scanpy</span></code> under the hood and can read in any format that is currently supported by <code class="docutils literal notranslate"><span class="pre">scanpy</span></code> , including mtx, loom, and more listed <a class="reference external" href="https://scanpy.readthedocs.io/en/latest/api/index.html#reading">in the scanpy documentation</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">prepare</span></code> uses scanpy to:</p>
+<ul class="simple">
+<li><p>Handle simple data normalization (from a <a class="reference external" href="https://www.pydoc.io/pypi/scanpy-0.2.3/autoapi/preprocessing/recipes/index.html">recipe</a>)</p></li>
+<li><p>Do basic preprocessing, run PCA, and compute the neighbor graph</p></li>
+<li><p>Generate UMAP and tSNE embeddings</p></li>
+<li><p>Infer clusters using Louvain</p></li>
+</ul>
+<p>You can control which steps to run and their methods (when applicable), via the CLI. The CLI also includes options for computing QC metrics, enforcing matrix sparcity, specifying index names, and plotting output.</p>
+</section>
+<section id="what-is-cellxgene-prepare-not">
+<h3>What is cellxgene <code class="docutils literal notranslate"><span class="pre">prepare</span></code> <em>not</em>?<a class="headerlink" href="#what-is-cellxgene-prepare-not" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code> is not meant as a way to formally process or analyze your data. It’s simply a utility for quickly wrangling your data into cellxgene-compatible format and computing a “vanilla” embedding so you can try out <code class="docutils literal notranslate"><span class="pre">cellxgene</span></code> and get a general sense of a dataset.</p>
+</section>
+<section id="quickstart-for-cellxgene-prepare">
+<h3>Quickstart for <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code><a class="headerlink" href="#quickstart-for-cellxgene-prepare" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip3 install cellxgene[prepare]
+cellxgene prepare dataset.h5ad --output=dataset-processed.h5ad
+</pre></div>
+</div>
+<p>This will load the input data, perform PCA and nearest neighbor calculations, compute <code class="docutils literal notranslate"><span class="pre">UMAP</span></code> and <code class="docutils literal notranslate"><span class="pre">tSNE</span></code> embeddings and <code class="docutils literal notranslate"><span class="pre">louvain</span></code> cluster assignments, and save the results in a new file called <code class="docutils literal notranslate"><span class="pre">dataset-processed.h5ad</span></code> that can be loaded using <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span></code>.</p>
+</section>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h3>
+<p>As a quick example, let’s construct a command to use <code class="docutils literal notranslate"><span class="pre">prepare</span></code> to take a raw expression matrix and generate a processed <code class="docutils literal notranslate"><span class="pre">h5ad</span></code> ready to visualize with cellxgene.</p>
+<p>We’ll start off using the raw data from the pbmc3k dataset. This dataset is described <a class="reference external" href="https://icb-scanpy.readthedocs-hosted.com/en/stable/api/scanpy.datasets.pbmc3k.html">here</a>, and is available as part of the scanpy package. For this example, we’ll assume this raw data is stored in a file called <code class="docutils literal notranslate"><span class="pre">pbmc3k-raw.h5ad</span></code>.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">prepare</span></code> command looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cellxgene prepare pbmc3k-raw.h5ad \
+    --run-qc \                                  # (A)
+    --recipe seurat \                           # (B)
+    --layout tsne --layout umap \               # (C)
+    --output pbmc3k-prepared.h5ad               # (D)
+</pre></div>
+</div>
+<p>Let’s look at what <code class="docutils literal notranslate"><span class="pre">prepare</span></code> is doing to our data, and how each step relates to the command above. You can see a walkthrough of what’s going on under the hood for this example in <a class="reference external" href="https://github.com/chanzuckerberg/cellxgene-vignettes/blob/master/dataset-processing/pbmc3k-prepare-example.ipynb">this notebook</a>.</p>
+<p><strong>(A) - Compute quality control metrics and store this in our <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> object for later inspection</strong> <strong>(B) - Normalize the expression matrix using a basic preprocessing recipe</strong> <strong>(auto) - Do some preprocessing to run PCA and compute the neighbor graph</strong> <strong>(auto) - Infer clusters with the Louvain algorithm and store these labels to visualize later</strong> <strong>(C) - Compute and store UMAP and tSNE embeddings</strong> <strong>(D) - Write results to file</strong></p>
+</section>
+<section id="options-for-cellxgene-prepare">
+<h3>Options for cellxgene <code class="docutils literal notranslate"><span class="pre">prepare</span></code><a class="headerlink" href="#options-for-cellxgene-prepare" title="Permalink to this headline">¶</a></h3>
+<p><strong>For the most up-to-date and comprehensive list of options, run <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span> <span class="pre">--help</span></code></strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--embedding</span></code> controls which dimensionality reduction algorithm is applies to your data. Options are <code class="docutils literal notranslate"><span class="pre">umap</span></code> and/or <code class="docutils literal notranslate"><span class="pre">tsne</span></code>. Defaults to both.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--recipe</span></code> controls which normalization steps to apply to your data, based on one of the preprocessing <code class="docutils literal notranslate"><span class="pre">recipes</span></code> included with <code class="docutils literal notranslate"><span class="pre">scanpy</span></code>. These recipes include steps like cell filtering and gene selection; see the <code class="docutils literal notranslate"><span class="pre">scanpy</span></code> <a class="reference external" href="https://scanpy.readthedocs.io/en/latest/api/index.html#recipes">documentation</a> for more details. Options are <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">seurat</span></code>, or <code class="docutils literal notranslate"><span class="pre">zheng17</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--sparse</span></code> is a flag determines whether to enforce a sparse matrix. For large datasets, <code class="docutils literal notranslate"><span class="pre">prepare</span></code> can take a long time to run (a few minutes for datasets with 10-100k cells, up to an hour or more for datasets with &gt;100k cells). If you want <code class="docutils literal notranslate"><span class="pre">prepare</span></code> to run faster we recommend using the <code class="docutils literal notranslate"><span class="pre">sparse</span></code> option. If this flag is not included, default is <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--skip-qc</span></code> by default, <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code> will compute quality control metrics (saved to <code class="docutils literal notranslate"><span class="pre">anndata.obs</span></code> and <code class="docutils literal notranslate"><span class="pre">anndata.var</span></code>) as described in the <code class="docutils literal notranslate"><span class="pre">scanpy</span></code> <a class="reference external" href="https://scanpy.readthedocs.io/en/stable/api/scanpy.pp.calculate_qc_metrics.html">documentation</a>. Pass this flag if you would like to skip this step.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--make-obs-names-unique</span></code> / <code class="docutils literal notranslate"><span class="pre">--make-var-names-unique</span></code> determine whether to rename <code class="docutils literal notranslate"><span class="pre">obs</span></code> (cell) / <code class="docutils literal notranslate"><span class="pre">var</span></code> (gene) names, respectively, to be unique. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--set-obs-names</span></code> controls which field in <code class="docutils literal notranslate"><span class="pre">anndata.obs</span></code> (cell metadata) is used as the <em>index</em> for cells (e.g., a cell ID column). Default is <code class="docutils literal notranslate"><span class="pre">anndata.obs.names</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--set-var-names</span></code> controls which field in <code class="docutils literal notranslate"><span class="pre">anndata.var</span></code> (gene metadata) is used as the <em>index</em> for genes. Default is <code class="docutils literal notranslate"><span class="pre">anndata.var.names</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--output</span></code> and <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code> control where the processed data is saved.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/desktop/data-reqs.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

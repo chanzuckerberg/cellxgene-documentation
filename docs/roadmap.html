@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Roadmap &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
+<section id="roadmap-vision">
+<h2>Roadmap Vision<a class="headerlink" href="#roadmap-vision" title="Permalink to this headline">¶</a></h2>
+<p>We are building cellxgene, a data publishing and exploration platform that maximizes the reusability of published data by standardizing it and making it findable and accessible. Cellxgene will provide cell-centric data access APIs for computational reuse and interactive graphical interfaces so that biologists and physicians can ask questions directly of the data.</p>
+</section>
+<section id="roadmap-themes">
+<h2>Roadmap Themes<a class="headerlink" href="#roadmap-themes" title="Permalink to this headline">¶</a></h2>
+<p>Our technology roadmap aims to:</p>
+<ol class="simple">
+<li><p>Make it easier to find data and evaluate if existing data can be used to answer novel research questions</p></li>
+<li><p>Make it easier for biologists, physicians, and computational biologists to use data to answer questions</p></li>
+</ol>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>We are planning to develop the following features on the Data Portal application. The Status column has one of three statuses:</p>
+<ul class="simple">
+<li><p>Development: Our engineering team is currently working hard to deliver this feature.</p></li>
+<li><p>Discovery: We’re in the process of defining requirements and prototyping this feature.</p></li>
+<li><p>Not Started: Self explanatory! We haven’t started Discovery yet.</p></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">
+        <p>Expected</p>
+        <p>Release</p>
+      </th>
+      <th style="text-align:left">Feature</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:center">Supports Theme</th>
+      <th style="text-align:left">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2021</td>
+      <td style="text-align:left"><a href="https://app.zenhub.com/workspaces/single-cell-5e2a191dad828d52cc78b028/issues/chanzuckerberg/single-cell/211">Find datasets</a>
+      </td>
+      <td style="text-align:left">Users can filter by metadata to find relevant datasets</td>
+      <td style="text-align:center">1</td>
+      <td style="text-align:left">Development</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left"><a href="https://app.zenhub.com/workspaces/single-cell-5e2a191dad828d52cc78b028/issues/chanzuckerberg/single-cell/104">Gene sets</a>
+      </td>
+      <td style="text-align:left">Users can publish gene sets containing marker genes, pathways, or mechanisms
+        along with datasets. Scientists coming to cellxgene can download and explore
+        data with published gene sets</td>
+      <td style="text-align:center">1</td>
+      <td style="text-align:left">Discovery</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left">Differential expression scale and speed improvements</td>
+      <td style="text-align:left">Differential expression runs on million cell scRNA-seq datasets in tens
+        of seconds</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Discovery</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left">Where&apos;s my gene?</td>
+      <td style="text-align:left">Users can view the expression of gene(s) across cell types in our public
+        data corpus spanning all available human tissues</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Discovery</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left"><a href="https://app.zenhub.com/workspaces/single-cell-5e2a191dad828d52cc78b028/issues/chanzuckerberg/single-cell/57">Protein &amp; splicing data support</a>
+      </td>
+      <td style="text-align:left">Users can publish and explore datasets that contain multiple data modalities
+        (i.e. Protein &amp; mRNA).</td>
+      <td style="text-align:center">1, 2</td>
+      <td style="text-align:left">Discovery</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left">Download selected cells from the corpus</td>
+      <td style="text-align:left">Users can select cells that match metadata in our schema and download
+        a concatenated set of cells from our UI or in their local compute environment
+        using our API</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022</td>
+      <td style="text-align:left">Integrate selections of cells and explore the results</td>
+      <td style="text-align:left">Users can select cells to integrate and then explore them using cellxgene&apos;s
+        visual tools</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022+</td>
+      <td style="text-align:left">Annotate and persist integrated datasets</td>
+      <td style="text-align:left">Once a user integrates multiple datasets, they can create cell labels
+        and gene sets. The integrated dataset, cell labels, and gene sets will
+        be downloadable, and will persist the next time they log in</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022+</td>
+      <td style="text-align:left">Integrate my dataset with public datasets</td>
+      <td style="text-align:left">Users can (privately) upload their dataset, select [cell types or datasets]
+        to integrate with from the data corpus, predict labels and annotations
+        for their data, and explore or download the result</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022+</td>
+      <td style="text-align:left">Gene set enrichment analysis</td>
+      <td style="text-align:left">Users can submit a list of genes and receive gene sets that are likely
+        matches. Users can view the gene sets that are most differentially expressed
+        between two populations of cells</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022+</td>
+      <td style="text-align:left">Where&apos;s my pathway?</td>
+      <td style="text-align:left">Users can view expression of predefined pathways (expressed as a gene
+        set mean) for cell types across the data corpus</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2022+</td>
+      <td style="text-align:left">Gene expression based indexing</td>
+      <td style="text-align:left">When selecting cells to integrate or download, users can refine their
+        selection with gene-expression based queries in addition to using metadata
+        values. For example, users could select only T-cells that express CD4 and
+        FOXP3</td>
+      <td style="text-align:center">2</td>
+      <td style="text-align:left">Not Started</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+<section id="please-note">
+<h2>Please Note<a class="headerlink" href="#please-note" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Our roadmap is subject to change based on community feedback and updates to our strategy.</p></li>
+<li><p>We update our roadmap every six months, this represents our best assessment of our future plans.</p></li>
+<li><p>We are fairly confident in delivering features in the short term. Longer term features we are less certain about what features we will deliver but are included to illustrate our vision for cellxgene.</p></li>
+</ul>
+</section>
+<section id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+<p>We welcome your feedback! Please see the <a class="reference internal" href="contact-us.html"><span class="doc std std-doc">Contact Us</span></a> section for how to get in touch.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/roadmap.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

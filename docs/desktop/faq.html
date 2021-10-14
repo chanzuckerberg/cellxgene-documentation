@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Troubleshooting &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<section id="i-tried-to-pip-install-cellxgene-and-got-a-weird-error-i-don-t-understand">
+<h2>I tried to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cellxgene</span></code> and got a weird error I don’t understand<a class="headerlink" href="#i-tried-to-pip-install-cellxgene-and-got-a-weird-error-i-don-t-understand" title="Permalink to this headline">¶</a></h2>
+<p>This may happen, especially as we work out bugs in our installation process! Please create a new <a class="reference external" href="https://github.com/chanzuckerberg/cellxgene/issues">Github issue</a>, explain what you did, and include all the error messages you saw. It’d also be super helpful if you call <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> and include the full output alongside your issue.</p>
+</section>
+<section id="i-have-a-big-dataset-how-can-i-make-cellxgene-run-as-fast-as-possible">
+<h2>I have a BIG dataset, how can I make cellxgene run as fast as possible?<a class="headerlink" href="#i-have-a-big-dataset-how-can-i-make-cellxgene-run-as-fast-as-possible" title="Permalink to this headline">¶</a></h2>
+<p>If your dataset requires gigabytes of disk space, you may need to select an appropriate storage format in order to effectively utilize <code class="docutils literal notranslate"><span class="pre">cellxgene</span></code>. Tips and tricks:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cellxgene</span></code> is optimized for columnar data access. For large datasets, format the expression matrix (<code class="docutils literal notranslate"><span class="pre">.X</span></code>) as either a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html">SciPy CSC sparse matrix</a> or a dense Numpy array (whichever creates a smaller <code class="docutils literal notranslate"><span class="pre">h5ad</span></code> file). If you are using <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">prepare</span></code>, include the <code class="docutils literal notranslate"><span class="pre">--sparse</span></code> flag to ensure <code class="docutils literal notranslate"><span class="pre">.X</span></code> is formatted as a CSC sparse matrix (by default, <code class="docutils literal notranslate"><span class="pre">.X</span></code> will be a dense matrix).</p></li>
+<li><p>By default, <code class="docutils literal notranslate"><span class="pre">cellxgene</span></code> loads the dataset into memory, and start time is directly proportional to <code class="docutils literal notranslate"><span class="pre">h5ad</span></code> file size and the speed of your file system. Expect that large (e.g., million cell) datasets will take minutes to load, even on relatively fast computers with a high performance local hard drive. Once loaded, exploring metadata should still be quick. If this start time is a problem, try the <code class="docutils literal notranslate"><span class="pre">--backed</span></code> flag, which will attempt to lazily load data as needed (caveat: subsequent data access may be slower).</p></li>
+<li><p>If your dataset size exceeds the size of memory (RAM) on the host computer, differential expression calculations will be extremely slow (or fail, if you run out of virtual memory). In this case, we recommend running with the <code class="docutils literal notranslate"><span class="pre">--disable-diffexp</span></code> flag. For datasets that are extremely large, you may also find the <code class="docutils literal notranslate"><span class="pre">--backed</span></code> flag improves your ability to explore them.</p></li>
+</ul>
+</section>
+<section id="i-m-following-the-developer-instructions-and-get-an-error-about-missing-files-and-directories-when-trying-to-build-the-client">
+<h2>I’m following the developer instructions and get an error about “missing files and directories” when trying to build the client<a class="headerlink" href="#i-m-following-the-developer-instructions-and-get-an-error-about-missing-files-and-directories-when-trying-to-build-the-client" title="Permalink to this headline">¶</a></h2>
+<p>This is likely because you do not have node and npm installed, we recommend using <a class="reference external" href="https://github.com/creationix/nvm">nvm</a> if you’re new to using these tools.</p>
+</section>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>We’d love to hear from you!</p>
+<p>For questions and suggestions, or to report bugs, file an issue in our <a class="reference external" href="https://github.com/chanzuckerberg/cellxgene">github</a>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/desktop/faq.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

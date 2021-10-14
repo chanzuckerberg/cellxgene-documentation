@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Features &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../desktop/quick-start.html"><span class="doc std std-doc">Cellxgene Desktop</span></a> and <a class="reference internal" href="../portal/data-portal.html"><span class="doc std std-doc">Data Portal</span></a> have common UI that enables exploration and interrogation of single cell data. This section describes cellxgene’s data exploration features.</p>
+<p>{% hint style=”info” %}
+While most features are shared, <a class="reference internal" href="../desktop/annotations.html"><span class="doc std std-doc">Annotation</span></a> is only available on Cellxgene Desktop.
+{% endhint %}</p>
+<section id="cross-filter-cells-and-color-by-metadata">
+<h2>Cross-filter cells and color by metadata<a class="headerlink" href="#cross-filter-cells-and-color-by-metadata" title="Permalink to this headline">¶</a></h2>
+<p>Categorical metadata can be used not only to color cells in the embedding scatterplot, but also to examine the representation of a particular metadata across other metadata fields. In the example below, check out how we can:</p>
+<ol class="simple">
+<li><p>Select all the cells that have the value “marrow” in the tissue category</p></li>
+<li><p>Subset these cells so that only the selection is displayed</p></li>
+<li><p>Expand another metadata category (“subtissue”) to reveal how cells from the marrow are distributed across different sub-tissues</p></li>
+</ol>
+<p><img alt="" src=".gitbook/assets/crossfilter.gif" /></p>
+</section>
+<section id="compare-groups-of-cells-with-differential-expression">
+<h2><img alt="" src=".gitbook/assets/image%20%282%29.png" /> Compare groups of cells with differential expression<a class="headerlink" href="#compare-groups-of-cells-with-differential-expression" title="Permalink to this headline">¶</a></h2>
+<p>Differential expression can be run between selections of two different groups of cells. In the media below, these steps are to:</p>
+<ol class="simple">
+<li><p>Select cells for the first group (“B Cells”)</p></li>
+<li><p>Select cells for the second group (“granulocytes”)</p></li>
+<li><p>Click the differential expression icon</p></li>
+<li><p>The top 10 differentially expressed features will appear on the right hand side-bar</p></li>
+</ol>
+<p><img alt="" src=".gitbook/assets/diffexp.gif" /></p>
+<p>{% hint style=”info” %}
+<strong>Note</strong>: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells (i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
+{% endhint %}</p>
+<p>{% hint style=”info” %}
+<strong>Note</strong>: You can find more information <a class="reference external" href="algorithms.md#differential-expression">here</a> about how our differential expression is calculated. In brief, we use a Welch’s t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the <em>most</em> differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
+{% endhint %}</p>
+</section>
+<section id="see-how-metadata-and-gene-expression-break-down-across-different-categories">
+<h2>See how metadata and gene expression break down across different categories<a class="headerlink" href="#see-how-metadata-and-gene-expression-break-down-across-different-categories" title="Permalink to this headline">¶</a></h2>
+<p>Cellxgene can give you information on how different categorical and continuous metadata are distributed within any metadata field on the left-hand sidebar. To accomplish this, one simply needs to:</p>
+<ol class="simple">
+<li><p>Color the cells by a desired categorical or continuous metadata field</p></li>
+<li><p>Expand another categorical metadata field to examine either the cross-occupancy (categorical metadata) or distribution (continuous metadata) within that newly expanded field</p></li>
+</ol>
+<p><img alt="" src=".gitbook/assets/category-breakdown.gif" /></p>
+<p>One could imagine using this feature in a scenario where it is expected that certain cell types are only present in a particular disease state.</p>
+</section>
+<section id="find-cells-where-a-gene-is-expressed">
+<h2>Find cells where a gene is expressed<a class="headerlink" href="#find-cells-where-a-gene-is-expressed" title="Permalink to this headline">¶</a></h2>
+<p>Cellxgene provides functionality to select cells based on gene expression (i.e. setting a numeric expression threshold or range). To accomplish this, one can:</p>
+<ol class="simple">
+<li><p>Search for a gene of interest using the search dialog in the upper right hand corner</p></li>
+<li><p>Color by the gene which you would like to gate by</p></li>
+<li><p>Brush over the histogram of gene expression in the right hand side bar to set the minimum and maximum thresholds for gene expression</p></li>
+</ol>
+<p><img alt="" src=".gitbook/assets/gene-expression.gif" /></p>
+</section>
+<section id="compare-expression-of-multiple-genes">
+<h2>Compare expression of multiple genes<a class="headerlink" href="#compare-expression-of-multiple-genes" title="Permalink to this headline">¶</a></h2>
+<p>Cellxgene, allows for the display of bi-variate scatter plots which results in FACS like plots that can be used to examine expression of custom combinations of genes.To examine and compare the expression of multiple genes in cellxgene, one can:</p>
+<ol class="simple">
+<li><p>Select a gene to plot on the X axis</p></li>
+<li><p>Select a gene to plot on the Y axis</p></li>
+</ol>
+<p><img alt="" src=".gitbook/assets/compare-genes.gif" /></p>
+<p>You can also also color by one of these genes to view expression in either the embedding plot of the bi-variate scatter plot. Additionally, you can still make manual selections on the embedding plot, while the bi-variate plot is active (in the example above, we select a particular cluster where we want to view the expression relationship between the first gene and the second gene)</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/explore-data/features.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

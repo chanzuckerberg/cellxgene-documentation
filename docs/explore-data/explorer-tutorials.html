@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorials &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../desktop/quick-start.html"><span class="doc std std-doc">Cellxgene Desktop</span></a> and <a class="reference internal" href="../portal/data-portal.html"><span class="doc std std-doc">Data Portal</span></a> explorers have a common UI that enables exploration and interrogation of single cell data. This section describes cellxgene’s data exploration capabilities.</p>
+<p>You can follow any of these tutorials by launching an instance of the cellxgene hosted explorer with the tabula sapiens using <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">this hosted explorer link</a> (alternatively you can view the <a class="reference external" href="https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5">Tabula Sapiens Collection</a> on Cellxgene Data Portal and launch the hosted explorer for the all cells atlas using the explore <img alt="" src=".gitbook/assets/explore.svg" /> icon). For more information on Tabula Sapiens, you can refer to <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.07.19.452956v1">the preprint on biorxiv</a>.</p>
+<p>For any of the tutorials below, use <img alt="" src=".gitbook/assets/image.png" /> to view the slides in fullscreen.</p>
+<section id="cellxgene-explorer-interface">
+<h2>Cellxgene Explorer Interface<a class="headerlink" href="#cellxgene-explorer-interface" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong> cellxgene’s user interface organizes single cell data similarly to how it is organized in single cell data formats. The left hand side displays categorical and numerical sample metadata. The right hand side is a space for displaying features such as genes and gene sets. The center displays the embedding, where each cell is a point. UMAP and tSNE are common embeddings, which place cells based on their local distances in gene expression space. Cells from spatial data can also be displayed using each cell’s (x, y) coordinates. Here is more complete overview of the cellxgene interface in both the hosted and desktop explorer.</p>
+<p>**Key Concepts: **user interface explanation</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/1DzuwuzLLCcy4hGCCekYwjPpwsWMJth0qt_DJOYc9avs/edit?usp=sharing” %}
+An introduction to the cellxgene explorer interface
+{% endembed %}</p>
+</section>
+<section id="examining-categorical-metadata">
+<h2>Examining Categorical Metadata<a class="headerlink" href="#examining-categorical-metadata" title="Permalink to this headline">¶</a></h2>
+<p>**Description: **Categorical metadata (such as tissue of origin or cell type) can be used in a number of ways within cellxgene including coloring embedding plots (i.e. color UMAP by cell type), looking at cell counts, within a categorical metadata field, making selections of cells or viewing the interaction between different categorical metadata fields.</p>
+<p><strong>Key Concepts:</strong> categorical metadata, selecting cells by category (i.e. cell type), interaction between categorical metadata fields</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/1fxuuzhiaYbMdG2NiHgN5-vxeQHwEjWVOSi4VmCAP1L0/edit?usp=sharing” %}</p>
+</section>
+<section id="find-cells-where-a-gene-is-expressed">
+<h2>Find Cells Where a gene is expressed<a class="headerlink" href="#find-cells-where-a-gene-is-expressed" title="Permalink to this headline">¶</a></h2>
+<p>**Description: **Numerical metadata (such gene expression features or QC metrics such as number of genes) can be examined on the embedding plot and be used to filter and select cells. Additionally tools like the clip tool can give us control over how these attributes are displayed on the embedding plot.</p>
+<p><strong>Key Concepts:</strong> numerical metadata, cell filtering and selection, interaction between numerical metadata categorical metadata fields</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/13c0Nj_kR32j0hNL0uZG_4cl646N_TH3ADaQzZFqDPBI/edit?usp=sharing” %}</p>
+</section>
+<section id="selecting-and-subsetting-cells">
+<h2>Selecting and Subsetting Cells<a class="headerlink" href="#selecting-and-subsetting-cells" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong> Cellxgene allows for the complex selection of cells via selection directly on the embedding, gene expression cutoffs, and based on categorical metadata attributes.</p>
+<p><strong>Key Concepts:</strong> categorical metadata selection, numerical metadata selection, complex selection (combining selection methods)</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/1T5fLkecZziuo6qUfAam1FmSYKhx-Ln9ytpqccjX8j2o/edit?usp=sharing” %}</p>
+</section>
+<section id="compare-expression-of-multiple-genes">
+<h2>Compare Expression of Multiple Genes<a class="headerlink" href="#compare-expression-of-multiple-genes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong> Cellxgene allows you to compare the expression of multiple genes via bivariate plots.</p>
+<p><strong>Key Concepts:</strong> gene expression, co-expression, cell selection, subsetting</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/13k5imBj40lMOHiWLvmdmoTI2F-ur79-f1X5wKW1tkRE/edit?usp=sharing” %}</p>
+</section>
+<section id="using-gene-sets-to-learn-about-cell-population-functional-characteristics">
+<h2>Using Gene Sets to learn about cell population functional characteristics<a class="headerlink" href="#using-gene-sets-to-learn-about-cell-population-functional-characteristics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description:</strong> Cellxgene allows you to examine groups of genes via the gene sets feature</p>
+<p><strong>Key Concepts:</strong> gene expression, co-expression, cell selection, subsetting</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p><strong>Resources:</strong> comma separated gene set list for use with this tutorial</p>
+<p>ACAA1, ACAA2, ACADL, ACADM, ACADS, ACADSB, ACADVL, ACAT1, ACAT2, ACOX1, ACOX3, ACSL1, ACSL3, ACSL4, ACSL5, ACSL6, ADH1A, ADH1B, ADH1C, ADH4, ADH5, ADH6, ADH7, ALDH1B1, ALDH2, ALDH3A2, ALDH7A1, ALDH9A1, CPT1A, CPT1B, CPT1C, CPT2, CYP4A11, CYP4A22, ECHS1, ECI1, ECI2, EHHADH, GCDH, HADH, HADHA, HADHB</p>
+<p>{% embed url=”https://docs.google.com/presentation/d/1ihFrKRSxnfFNexctOZ0EkUow9SWgEr-9TOVKvVLE8ms/edit?usp=sharing” %}</p>
+</section>
+<section id="find-marker-genes">
+<h2>Find Marker Genes<a class="headerlink" href="#find-marker-genes" title="Permalink to this headline">¶</a></h2>
+<p>**Description: **Cellxgene allows you to find marker genes between selected cell populations</p>
+<p><strong>Key Concepts:</strong> gene expression, differential expression, cell selection, subsetting</p>
+<p><strong>Follow along</strong>: <a class="reference external" href="https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/">Tabula Sapiens on cellxgene data portal</a></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/1J0QbINEeHWXNGLwj0dV7PaKCoZn3TRjE3Z2qYydr960/edit?usp=sharing” %}</p>
+<p>{% hint style=”info” %}
+<strong>Note</strong>: In the hosted explorer present on the cellxgene data portal, the differential expression feature has a limit of 50,000 cells (i.e. the sum of the number of cells in group 1 and group 2 cannot exceed 50,000). You can workaround this by only selecting subsamples of large clusters. We are currently working on ways to scale this calculation in the hosted setting.
+{% endhint %}</p>
+<p>{% hint style=”info” %}
+<strong>Note</strong>: You can find more information <a class="reference external" href="algorithms.md#differential-expression">here</a> about how our differential expression is calculated. In brief, we use a Welch’s t-test. While we are aware that single cell data does not always meet the assumptions imposed by this test, we utilize it because it performs well at identifying the <em>most</em> differentially expressed genes. This enables rapid exploration without sacrificing accuracy.
+{% endhint %}</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/explore-data/explorer-tutorials.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

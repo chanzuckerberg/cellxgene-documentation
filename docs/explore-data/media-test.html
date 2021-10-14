@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Vignette Media Test &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="vignette-media-test">
+<h1>Vignette Media Test<a class="headerlink" href="#vignette-media-test" title="Permalink to this headline">¶</a></h1>
+<p>These are initial attempts designed only to demonstrate media types. Both the slideshow and the movie could be annotated to highlight the actions being taken.</p>
+<p>The vignettes both demonstrate the cross-filter functionality of cellxgene, which enables you to explore how one categorical variable is distributed in terms of another. The below vignettes use the <a class="reference external" href="https://cellxgene.cziscience.com/e/48b37086-25f7-4ecd-be66-f5bb378e3aea.cxg/">tabula muris senis dataset</a>, which you can click to follow along, and explore which animals the liver sub-tissues were identified in.</p>
+<p>The vignette walks through the following steps (numbers refer to slides):</p>
+<ul class="simple">
+<li><p>(1) Color by <code class="docutils literal notranslate"><span class="pre">tissue</span></code> to reveal the different tissues of the dataset and then (2) Expand the <code class="docutils literal notranslate"><span class="pre">tissue</span></code> category to see the labels and cell abundances of each tissue</p></li>
+<li><p>Subset to only <code class="docutils literal notranslate"><span class="pre">liver</span></code> cells by (3) deselecting all cells by clicking the check box next to <code class="docutils literal notranslate"><span class="pre">tissue</span></code> to deselect all cells, (4) selecting <code class="docutils literal notranslate"><span class="pre">liver</span></code> cells by selecting the check box next to <code class="docutils literal notranslate"><span class="pre">liver</span></code>, and (5) clicking the <code class="docutils literal notranslate"><span class="pre">subset</span></code> button</p></li>
+<li><p>(7) Examining the sub-tissues that remain after subsetting by clicking <code class="docutils literal notranslate"><span class="pre">expand</span></code> by <code class="docutils literal notranslate"><span class="pre">subtissue</span></code> and then coloring by <code class="docutils literal notranslate"><span class="pre">subtissue</span></code></p></li>
+<li><p>(8) Coloring by <code class="docutils literal notranslate"><span class="pre">mouse.id</span></code> to reveal the proportion of each sub-tissue that comes from each donor mouse. In this case the result reveals a data curation issue that we know about (multiple different <code class="docutils literal notranslate"><span class="pre">hepatocyte</span></code> fields should be harmonized and combined!) and will take care of in our schema 2.0.0 upgrade, which is in progress.</p></li>
+</ul>
+<p><strong>The question we have is: Between the slideshow and video below, which media type should we use to create vignettes for cellxgene?</strong></p>
+<p>{% embed url=”https://docs.google.com/presentation/d/e/2PACX-1vSNyqJhC_4huJLCaKZp6YOQcm0F0m603WG7R2_G-5yKf5yAaxOt_xGVE4qPZ7-TqmqSYosIH1R-5Txe/pub?start=false&amp;loop=false&amp;delayms=3000” caption=”Note: to enter full screen, click the vertical ellipsis and select “Enter full screen”.” %}</p>
+<p>{% embed url=”https://www.youtube.com/watch?v=IRYVnJ9C4EQ” %}</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/explore-data/media-test.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

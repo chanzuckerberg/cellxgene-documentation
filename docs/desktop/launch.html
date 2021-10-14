@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Launch &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="launch">
+<h1>Launch<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h1>
+<section id="launching-cellxgene-with-your-dataset">
+<h2>Launching cellxgene with your dataset<a class="headerlink" href="#launching-cellxgene-with-your-dataset" title="Permalink to this headline">¶</a></h2>
+<section id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<p>Once you’ve <a class="reference internal" href="#"><span class="doc std std-doc">prepared your data</span></a> for cellxgene, you can launch the app using</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cellxgene launch mydataset.h5ad --open
+</pre></div>
+</div>
+<p>You should see your web browser open with the following</p>
+<p><strong>Note</strong>: automatic opening of the browser with the <code class="docutils literal notranslate"><span class="pre">--open</span></code> flag only works on some platforms (eg, OSX). On other platforms you’ll need to directly point to the provided link in your browser.</p>
+</section>
+<section id="launching-from-a-url">
+<h3>Launching from a URL<a class="headerlink" href="#launching-from-a-url" title="Permalink to this headline">¶</a></h3>
+<p>You can also launch from a URL directly like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cellxgene launch https://github.com/chanzuckerberg/cellxgene/raw/main/example-dataset/pbmc3k.h5ad
+</pre></div>
+</div>
+<p>Support for S3 and GCS is not enabled by default. If you wish to directly access S3 or GFS, install one or both of the following packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://s3fs.readthedocs.io/en/latest/">s3fs</a> for S3 support</p></li>
+<li><p><a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> for GCS support</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip install s3fs
+cellxgene launch s3://mybucket.s3-us-west-2.amazonaws.com/mydata.h5ad
+</pre></div>
+</div>
+</section>
+<section id="options-for-cellxgene-launch">
+<h3>Options for cellxgene <code class="docutils literal notranslate"><span class="pre">launch</span></code><a class="headerlink" href="#options-for-cellxgene-launch" title="Permalink to this headline">¶</a></h3>
+<p><strong>For the most up-to-date and comprehensive list of options, run <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span> <span class="pre">--help</span></code></strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--open</span></code> automatically opens the web browser after launching (caveat: only works on some operating systems).</p>
+<p><code class="docutils literal notranslate"><span class="pre">--disable-annotations</span></code>, <code class="docutils literal notranslate"><span class="pre">--annotations-file</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">--annotations-dir</span></code> all have to do with creating new categorical annotations in the application. We have a <a class="reference internal" href="annotations.html"><span class="doc std std-doc">whole separate page</span></a> about their usage! :)</p>
+<p><code class="docutils literal notranslate"><span class="pre">--diffexp-lfc-cutoff</span></code> as explained <a class="reference internal" href="../explore-data/algorithms.html"><span class="doc std std-doc">in the methods</span></a>, genes are only returned in differential expression if the effect size is above the specified threshold for log fold change. Defaults to 0.01.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--disable-diffexp</span></code> will disable and hide the <code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Differential</span> <span class="pre">Expression</span></code> feature. For large datasets, or datasets loaded with the <code class="docutils literal notranslate"><span class="pre">--backed</span></code> option, computing differential expression may be extremely slow or use excessive resources on the host computer (e.g., memory thrashing). Disabling the feature will ensure that this computation is not initiated accidentally.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--backed</span></code> option instructs <code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span></code> to read the H5AD file in “backed” mode (for more information, see the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/anndata.read_h5ad.html#anndata.read_h5ad">anndata.read_h5ad() documentation</a>).</p>
+<p>By default, cellxgene will read the entire H5AD will be into memory at startup, improving application speed and performance. Very large datasets may not fit in memory. The “–backed” mode will read the file incrementally, reducing memory use, and for large files, improving startup speed. <em>However</em>, this option will also significantly slow down access to gene expression histograms, and may render differential expression calculations too slow to use (see <code class="docutils literal notranslate"><span class="pre">--disable-diffexp</span></code> for an option to disable this feature).</p>
+<p><code class="docutils literal notranslate"><span class="pre">--embedding</span></code> restricts which embeddings will be available in the viewer. By default, all embeddings specified in <code class="docutils literal notranslate"><span class="pre">anndata.obsm['X_name']</span></code> will be loaded; if you have many embeddings, you may wish to restrict this list for a speedier launch.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--title</span></code> adds a title to the viewer. Defaults to file name.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--about</span></code> adds a link where users can go to find more infomation about the dataset. Requires <code class="docutils literal notranslate"><span class="pre">https</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--obs-names</span></code> allows you to specify which column in <code class="docutils literal notranslate"><span class="pre">anndata.obs</span></code> to use as <code class="docutils literal notranslate"><span class="pre">anndata.obs.index</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--var-names</span></code> allows you to specify which column in <code class="docutils literal notranslate"><span class="pre">anndata.var</span></code> to use as <code class="docutils literal notranslate"><span class="pre">anndata.var.index</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--max-category-items</span></code> omits categorical metadata fields that contain more than N <em>distinct</em> values. Defaults to 1000.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/desktop/launch.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

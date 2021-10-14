@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Self-Host Cellxgene &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="self-host-cellxgene">
+<h1>Self-Host Cellxgene<a class="headerlink" href="#self-host-cellxgene" title="Permalink to this headline">¶</a></h1>
+<section id="hosting-cellxgene-desktop-on-the-web">
+<h2>Hosting cellxgene desktop on the web<a class="headerlink" href="#hosting-cellxgene-desktop-on-the-web" title="Permalink to this headline">¶</a></h2>
+<p>Cellxgene desktop is intended to be used by researchers on their local machines. In cases where collaborators are not comfortable installing cellxgene, it is possible to host cellxgene, so your collaborators only need to open the URL you send them.</p>
+<p>We don’t officially support web deployment, but we’ve offered some guidance in the following sections on ways to deploy cellxgene to the web.</p>
+<p>{% hint style=”info” %}
+We are developing the <a class="reference internal" href="../../portal/publishing.html"><span class="doc std std-doc">Data Portal</span></a> to support private sharing, however publishing is not yet widely available.
+{% endhint %}</p>
+<section id="general-notes-and-cautions">
+<h3>General notes and cautions<a class="headerlink" href="#general-notes-and-cautions" title="Permalink to this headline">¶</a></h3>
+<p>Please consider the following when deploying cellxgene in any “hosted” environment, especially where access from the broader Internet is possible:</p>
+<ul class="simple">
+<li><p>Information security requires careful configuration of the host environment, including firewall, logging, etc - please follow best practices</p></li>
+<li><p>Cellxgene includes features which may be inappropriate for a hosted deployment - you may wish to use the following command line option: <code class="docutils literal notranslate"><span class="pre">--disable-diffexp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellxgene</span> <span class="pre">launch</span></code> currently uses Flask’s development server, which is not recommended for hosted deployment (see the <a class="reference external" href="https://flask.palletsprojects.com/en/1.1.x/tutorial/deploy/#run-with-a-production-server">Flask documentation</a>)</p></li>
+<li><p>We have no testing or official support for deployments where multiple users are accessing the same cellxgene instance</p></li>
+<li><p>Your cellxgene instance is likely to hang or crash if too many people access it at the same time, especially if they using functions that call the Python backend (such as differential expression, noted above)</p></li>
+<li><p>Cellxgene only supports one instance per dataset</p></li>
+</ul>
+<p>If you believe you have found a security-related issue with cellxgene, please report the issue immediately to <a class="reference external" href="mailto:security&#37;&#52;&#48;chanzuckerberg&#46;com">security<span>&#64;</span>chanzuckerberg<span>&#46;</span>com</a>.</p>
+</section>
+<section id="configuration-options">
+<h3>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h3>
+<p>The following configuration options require special consideration in any multi-user or hosted environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">--disable-diffexp</span></code>: the differential expression computation can be resource intensive, in particular for large datasets. If many differential expression calculation requests are made in rapid sequence, it may cause the server CPU or memory resources to be exhausted, and impact the ability of other users to access data. This command line option will disable the differential expression feature, including the removal of the <code class="docutils literal notranslate"><span class="pre">Differential</span> <span class="pre">expression</span></code> button.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--disable-annotations</span></code>: annotations, which is enabled by default, may not be appropriate for hosted environments. It will write to the local file system, and in extreme cases could be used to abuse (or exceed) file system capacity on the hosting server. We recommend disabling this with this flag.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--annotations-file</span></code>: this specifies a single file for all end-user annotations, and is incompatible with hosted or multi-user use of cellxgene. Using it will cause loss of user annotation data (ie, the CSV file will be overwritten). If you wish to explore using the annotations feature in a multi-user environment, please refer to the <a class="reference internal" href="../annotations.html"><span class="doc std std-doc">annotations documentation</span></a>, and in particular the <code class="docutils literal notranslate"><span class="pre">--annotations-dir</span></code> flag.</p>
+</section>
+<section id="community-software-projects">
+<h3>Community software projects<a class="headerlink" href="#community-software-projects" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of teams building tools or infrastructure to better utilize cellxgene in a multiple user environment. While we do not endorse any particular solution, you may find the following helpful.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Novartis/cellxgene-gateway">Novartis Cellxgene Gateway</a> - a multiple-user and multiple-dataset gateway for cellxgene</p></li>
+<li><p>Interactive Environment in the <a class="reference external" href="https://galaxyproject.org/">Galaxy Project</a> (<a class="reference external" href="https://docs.galaxyproject.org/en/release_19.05/releases/19.05_announce.html">patch notes</a>)</p></li>
+</ul>
+<p>If you know of other solutions, drop us a note and we’ll add to this list.</p>
+</section>
+<section id="live-examples-of-self-hosted-cellxgene-desktop">
+<h3>Live Examples of self-hosted Cellxgene Desktop<a class="headerlink" href="#live-examples-of-self-hosted-cellxgene-desktop" title="Permalink to this headline">¶</a></h3>
+<p>Several groups have independently deployed various versions of cellxgene to the web. Check out the cool data that have been hosted using cellxgene!</p>
+<p><a class="reference external" href="https://www.kidneycellatlas.org/">Kidney cell atlas</a></p>
+<p><a class="reference external" href="https://tabula-muris-senis.ds.czbiohub.org/">Tabula muris senis</a></p>
+<p><a class="reference external" href="https://hemocytes.cellgeni.sanger.ac.uk/">Hemocytes</a></p>
+<p><a class="reference external" href="https://melanoma.cellgeni.sanger.ac.uk/">Melanoma</a></p>
+<p><a class="reference external" href="https://cellxgene.cziscience.com">Cellxgene Data Portal</a></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/desktop/self-hosting/README.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Community Extensions &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="community-extensions">
+<h1>Community Extensions<a class="headerlink" href="#community-extensions" title="Permalink to this headline">¶</a></h1>
+<p>This project was started with the sole goal of empowering the scientific community to explore and understand their data. As such, we encourage other scientific tool builders in academia or industry to adopt the patterns, tools, and code from this project. All code is freely available for reuse under the <a class="reference external" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>Before extending cellxgene, we encourage you to reach out to us with ideas or questions. It might be possible that an extension could be directly contributed, which would make it available for a wider audience, or that it’s on our roadmap and under active development.</p>
+<p>Please note that cellxgene does not have public APIs. Our development may break extensions. We will document changes to the code base but it is advised that extensions pin the version of cellxgene they develop against.</p>
+<section id="example-reuse-extensions">
+<h2>Example Reuse &amp; extensions<a class="headerlink" href="#example-reuse-extensions" title="Permalink to this headline">¶</a></h2>
+<section id="cellxgene-gateway">
+<h3>cellxgene Gateway<a class="headerlink" href="#cellxgene-gateway" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/Novartis/cellxgene-gateway">cellxgene Gateway</a> allows you to use with multiple datasets. It displays an index of available h5ad (anndata) files. When a user clicks on a file name, it launches a Cellxgene Server instance that loads that particular data file and once it is available proxies requests to that server.</p>
+</section>
+<section id="cellxgene-vip-visualization-in-plugin">
+<h3>cellxgene-VIP (Visualization in Plugin)<a class="headerlink" href="#cellxgene-vip-visualization-in-plugin" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/interactivereport/cellxgene_VIP">cellxgene-VIP</a> enables cellxgene to generate violin, stacked violin, stacked bar, heatmap, volcano, embedding, dot, track, density, 2D density, sankey and dual-gene plot in high-resolution SVG/PNG format. It also performs differential gene expression analysis and provides a Command Line Interface (CLI) for advanced users to perform analysis using python and R.</p>
+</section>
+<section id="galaxy">
+<h3>Galaxy<a class="headerlink" href="#galaxy" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://singlecell.usegalaxy.eu/">Galaxy</a> is an open source, web-based platform for data intensive biomedical research. cellxgene can be accessed within Galaxy to view analyzed datasets. See also the relevant <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2020.06.06.137570v1.full.pdf">publication</a></p>
+</section>
+<section id="single-cell-portal">
+<h3>Single Cell Portal<a class="headerlink" href="#single-cell-portal" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://singlecell.broadinstitute.org/single_cell">Single Cell Portal</a> is a data hosting and visualization service. cellxgene can be embedded as an additional view to complement the visualizations provided by the. <a class="reference external" href="https://singlecell.broadinstitute.org/single_cell/study/SCP807/atlas-of-healthy-and-shiv-infected-non-human-primate-lung-and-ileum-ace2-cells">Example</a>.</p>
+</section>
+<section id="fastgenomics">
+<h3>FASTGenomics<a class="headerlink" href="#fastgenomics" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://beta.fastgenomics.org/">FASTGenomics</a> is a collaborative research platform that offers easy-to-use data management and reproducible analytics to drive single-cell research forward. Many of the publicly available datasets in FASTGenomics - as well as your private datasets - can be interactively explored with cellxgene. See also this <a class="reference external" href="https://beta.fastgenomics.org/datasets/detail-dataset-952687f71ef34322a850553c4a24e82e#Cellxgene">example</a> for data from <a class="reference external" href="https://beta.fastgenomics.org/p/schulte-schrepping_covid19">Schulte-Schrepping et al. (Cell, 2020)</a>. Note that it is not necessary to create an account, anonymous login is permitted.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/community-extensions.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

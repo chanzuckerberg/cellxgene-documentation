@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>AWS/Linux server with basic authentication &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="aws-linux-server-with-basic-authentication">
+<h1>AWS/Linux server with basic authentication<a class="headerlink" href="#aws-linux-server-with-basic-authentication" title="Permalink to this headline">¶</a></h1>
+<section id="contributors">
+<h2><strong>Contributors</strong>:<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<p>Lisa Sikkema and Thomas Walzthoeni</p>
+</section>
+<section id="hosting-use-case">
+<h2>Hosting Use Case:<a class="headerlink" href="#hosting-use-case" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Private self-hosting on an EC2 instance</p></li>
+<li><p>Access by external collaborators and potentially password authentication</p></li>
+</ul>
+</section>
+<section id="components">
+<h2>Components:<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/chanzuckerberg/cellxgene">Cellxgene Desktop</a>: the application to be run</p></li>
+<li><p><a class="reference external" href="https://www.nginx.com/">Nginx</a>: used as a reverse proxy to redirect web requests to the WSGI</p></li>
+<li><p><a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/">uWSGI</a>: forwards requests from the Nginx web server to our python flask framework</p></li>
+<li><p><a class="reference external" href="https://httpd.apache.org/docs/2.4/programs/htpasswd.html">Htpasswd</a>: used to allow basic authentication for web requests</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>For a general reference, you can <a class="reference external" href="https://hackersandslackers.com/deploy-flask-uwsgi-nginx/">refer</a> to this article on how to deploy a flask application (a.k.a. Cellxgene) to an AWS EC2 instance - or a general linux server using Nginx for receiving web requests, uWSGI to redirect those requests to the python application and htpasswd to add a basic authentication layer over the server.</p>
+<p>This general guide can be modified with a few components that would be specific to a cellxgene deployment. First, the flask application which is deployed on your server (found in the ‘prep your project’ section of the linked article) should be cellxgene with an appropriate wsgi.py file added as described in the article. Second, the Nginx config file needs to be modified, an example config file may look like the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Default route to login
+server {
+    listen 443 ssl;
+    server_name YOURHOSTNAME;
+
+    # SSL
+    ssl_certificate /etc/nginx/conf.d/domain.crt;
+    ssl_certificate_key /etc/nginx/conf.d/domain.key;
+
+    location /cellxgene_example {
+        proxy_set_header Accept-Encoding &quot;&quot;;
+        proxy_pass                            
+http://localhost:5007/
+;
+        proxy_set_header Host                 $http_host;
+        proxy_set_header X-Real-IP            $remote_addr;
+        proxy_set_header X-Forwarded-For      $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto    $scheme;
+        # replacements
+        sub_filter &#39;href=&quot;static&#39; &#39;href=&quot;cellxgene_example/static&#39;;
+        sub_filter &#39;src=&quot;static&#39; &#39;src=&quot;cellxgene_example/static&#39;;
+        sub_filter_types *;
+        sub_filter_once off;
+        # To add basic authentication to v2 use auth_basic setting.
+        auth_basic &quot;Registry realm&quot;;
+        auth_basic_user_file /etc/nginx/conf.d/nginx.htpasswd;
+        client_max_body_size 50M;
+    }
+
+}
+
+server {
+    listen 80 default_server;
+
+    server_name _;
+
+    return 301 
+https://$host$request_uri
+;
+}
+</pre></div>
+</div>
+<p>With respect to above Nginx config specification, one would start the browser using port 5007 and forward a request from <a class="reference external" href="https://YOURHOSTNAME/cellxgene_example">https://YOURHOSTNAME/cellxgene_example</a> to the cxg browser ([http://localhost:5007](http://localhost:5007%29%29.%20What%20is%20also%20added%20is%20basic_auth%20that%20adds%20a%20login%20request%20with%20a%20username%20and%20password.%20The%20nginx.htpasswd%20file%20is%20generated%20using%20htpasswd.%20If%20you%20want%20to%20add%20additional%20browsers,%20this%20is%20done%20by%20just%20adding%20additional%20location%20stanzas%20and%20running%20the%20cxg%20on%20a%20different%20port.%20The%20additional%20location%20stanzas%20just%20need%20to%20be%20adapted%20accordingly%20%28proxy_pass%20and%20sub_filter%20lines).</p>
+<p><strong>Note regarding storage and memory on the EC2 instance (if you implement using AWS):</strong></p>
+<p>Since datasets will be loaded into the memory of your machine, ram costs could potentially be high, especially if you plan to host multiple large datasets. To avoid higher than necessary costs, you can store data on S3 and only pull the data onto the machine’s memory when the cellxgene explorer is launched. This should be compatible with the approach detailed above (albeit by tweaking a config variable to point to where the data is located).</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/desktop/self-hosting/nginx.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

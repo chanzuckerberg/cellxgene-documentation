@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Heroku &#8212; cellxgene 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="heroku">
+<h1>Heroku<a class="headerlink" href="#heroku" title="Permalink to this headline">¶</a></h1>
+<section id="self-hosting-with-heroku">
+<h2>Self-hosting with Heroku<a class="headerlink" href="#self-hosting-with-heroku" title="Permalink to this headline">¶</a></h2>
+<p>You can create a Heroku app via <a class="reference external" href="https://github.com/chanzuckerberg/cellxgene/blob/main/Dockerfile">our provided Dockerfile here</a> and <a class="reference external" href="https://devcenter.heroku.com/articles/build-docker-images-heroku-yml">Heroku’s documentation</a>.</p>
+<p>You may have to tweak the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> like so:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>FROM ubuntu:bionic
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+RUN apt-get update &amp;&amp; \
+    apt-get install -y build-essential libxml2-dev python3-dev python3-pip zlib1g-dev python3-requests &amp;&amp; \
+    pip3 install cellxgene
+
+# ENTRYPOINT [&quot;cellxgene&quot;]  # Heroku doesn&#39;t work well with ENTRYPOINT
+</pre></div>
+</div>
+<p>and provide a <code class="docutils literal notranslate"><span class="pre">heroku.yml</span></code> file similar to this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>build:
+  docker:
+    web: Dockerfile
+run:
+  web:
+    command:
+      - cellxgene launch --host 0.0.0.0 --port $PORT $DATASET # the DATATSET config var must be defined in your dashboard settings.
+</pre></div>
+</div>
+</section>
+<section id="what-is-heroku">
+<h2>What is Heroku?<a class="headerlink" href="#what-is-heroku" title="Permalink to this headline">¶</a></h2>
+<p>Heroku is a quick and easy way to host applications on the cloud.</p>
+<p>A Heroku deployment of cellxgene means that the app is not running on your local machine. Instead, the app is installed, configured, and run on the Heroku servers (read: cloud).</p>
+<p>On Heroku’s servers, applications run on a <a class="reference external" href="https://www.heroku.com/dynos">dyno</a> which are Heroku’s implementation and abstraction of containers.</p>
+<p>Heroku is one of many options available for hosting instances of cellxgene on the web. Some other options include: Amazon Web Services, Google Cloud Platform, Digital Ocean, and Microsoft Azure.</p>
+</section>
+<section id="why-use-heroku-to-deploy-cellxgene">
+<h2>Why use Heroku to deploy cellxgene?<a class="headerlink" href="#why-use-heroku-to-deploy-cellxgene" title="Permalink to this headline">¶</a></h2>
+<p>What Heroku enables is a quick, non-technical method of setting up a cellxgene instance. No command line knowledge needed. This also allows machines to access the instance via the internet, so sharing a visualized dataset is as simple as sharing a link.</p>
+<p>Because cellxgene currently heavily relies on its Python backend for providing the viewer with the necessary data and tooling, it is currently not possible to host cellxgene as a static webpage.</p>
+<p>This is a good option if you want to quickly deploy an instance of cellxgene to the web. Heroku deployments are free for small datasets up to around 250MBs in size. See below regarding larger datasets.</p>
+</section>
+<section id="when-should-i-not-deploy-with-heroku">
+<h2>When should I not deploy with Heroku?<a class="headerlink" href="#when-should-i-not-deploy-with-heroku" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The default free dyno offered by Heroku is limited in memory to 512 MBs</p>
+<ul>
+<li><p>The amount of memory needed for the dyno is roughly the same size as the h5ad file</p></li>
+<li><p>Heroku offers tiered paid dynos. More can be found on the <a class="reference external" href="https://www.heroku.com/pricing">Heroku pricing page</a></p></li>
+<li><p>Note that this can get <em>very</em> expensive for larger datasets ($25+ a month)</p></li>
+</ul>
+</li>
+<li><p>On the free dyno, after 30 minutes of inactivity, Heroku will put your app into a hibernation mode. On the next access, Heroku will need time to boot the dyno back online.</p></li>
+<li><p>Having multiple simultaneous users requires more memory. This means that the free container size is easily overwhelmed by multiple users, even with small datasets; this can be addressed by purchasing a larger container size</p></li>
+<li><p>For this facilitated Heroku deployment to work, your dataset must be hosted on a publicly accessible URL</p></li>
+<li><p>By default, Heroku publically shares your instance to anyone with the URL.</p>
+<ul>
+<li><p>There are many ways of securing your instance. One quick and simple way is by installing <a class="reference external" href="https://elements.heroku.com/addons/wwwhisper">wwwhisper</a>, a Heroku addon</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">cellxgene</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../annotating-data.html">Annotating Data</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, cellxgene@chanzuckerberg.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/desktop/self-hosting/heroku.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
