@@ -1,7 +1,3 @@
----
-description: An explanation of publishing and data submission to the cellxgene data portal
----
-
 # Upload and Publish Data
 
 > We are currently alpha testing the publishing portal and are not accepting public submissions at this time.

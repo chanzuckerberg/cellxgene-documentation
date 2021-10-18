@@ -1,14 +1,17 @@
 # Github
 
-## Cellxgene Explorer
+## Single Cell Data Portal
 
-{% embed url="https://github.com/chanzuckerberg/cellxgene" caption="" %}
+https://github.com/chanzuckerberg/corpora-data-portal
 
-## Cellxgene Data Portal
+## Single Cell Schema and Validation
 
-{% embed url="https://github.com/chanzuckerberg/corpora-data-portal" caption="" %}
+https://github.com/chanzuckerberg/single-cell-curation
 
-## Cellxgene Schema and Validation
+## Single Cell Explorer
 
-{% embed url="https://github.com/chanzuckerberg/single-cell-curation" caption="" %}
+https://github.com/chanzuckerberg/single-cell-explorer
 
+## Cellxgene Desktop
+
+https://github.com/chanzuckerberg/cellxgene

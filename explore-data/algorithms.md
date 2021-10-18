@@ -1,9 +1,3 @@
----
-description: >-
-  A section describing implementation details around algos in cellxgene - an
-  explanation of commonly used algorithms in single cell analysis
----
-
 # Algorithms used by Cellxgene
 
 ## Differential expression
