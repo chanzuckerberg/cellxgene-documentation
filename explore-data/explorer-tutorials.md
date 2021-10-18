@@ -2,7 +2,7 @@
 
 [Cellxgene Desktop](../desktop/quick-start.md) and [Data Portal](../portal/data-portal.md) explorers have a common UI that enables exploration and interrogation of single cell data. This section describes cellxgene's data exploration capabilities.
 
-You can follow any of these tutorials by launching an instance of the cellxgene Hosted Explorer with the Tabula Sapiens using [this Hosted Explorer link](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/). For more information on Tabula Sapiens, you can refer to [the preprint on biorxiv](https://www.biorxiv.org/content/10.1101/2021.07.19.452956v1).
+You can follow any of these tutorials by launching an instance of the cellxgene Explorer with the Tabula Sapiens using [this Hosted Explorer link](https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/). For more information on Tabula Sapiens, you can refer to [the preprint on biorxiv](https://www.biorxiv.org/content/10.1101/2021.07.19.452956v1).
 
 ## Cellxgene Explorer Interface
 
