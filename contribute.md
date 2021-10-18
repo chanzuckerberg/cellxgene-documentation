@@ -16,7 +16,7 @@ We warmly welcome contributions from the community to our [cellxgene Desktop rep
 
 If you have a very specific problem you are trying to solve, we encourage you to fork our repo and make updates there.
 
-We are not currently accepting community PRs for [cellxgene Data Portal](https://cellxgene.cziscience.com/).
+We are not currently accepting community PRs for [cellxgene Data Portal](https://cellxgene.cziscience.com/) but greatly value and encourage submission of [feature requests](https://github.com/chanzuckerberg/single-cell-data-portal/issues).
 
 ### Getting started
 
