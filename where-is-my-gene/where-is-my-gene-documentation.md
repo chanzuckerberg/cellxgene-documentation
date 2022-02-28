@@ -38,11 +38,11 @@ Gene counts are normalized using the rankit method. For a given cell in a count 
 Here is a visual representation of this method:
 
  <p align="center">
-    <img src="./files/distribution_read_counts.png" alt="alternate text">
+    <img src="./files/distribution_read_counts.png" width="400" height="164">
  </p>
  
   <p align="center">
-    <img src="./files/distribution_rankit.png" alt="alternate text">
+    <img src="./files/distribution_rankit.png" width="400" height="164"	>
  </p>
  
 This method accounts for sequencing depth by standardizing gene expression within the approximate range of -3 to 3. A high gene-cell value (>2)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<2) indicates that the gene is amongst the lowest expressed genes in that cell. 
