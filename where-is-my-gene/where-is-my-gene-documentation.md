@@ -17,6 +17,21 @@ TODOs: <br>
 - Include examples for color of what low, medium and high is.
 </span>
 
+## Cell type ordering
+
+Cell types are annotated by the original data contributors and mapped to the closest cell ontology (CL) term as defined in the [data schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/2.0.0/schema.md#cell_type_ontology_term_id). 
+
+In some cases there are cell types annotated with a high-level term whereas in some other cases they can be very granularly annotated. For example, there are some cells annotated as "T cells" and others annotated with children terms like "effector CD8-positive, alpha-beta T cell". All of these cell types are shown in the dot plot and they should not be interpreted as one being a subset of the other.
+
+
+### Ontology-based ordering
+
+Cell types are ordered according to the CL directed acyclic graph (DAG). Briefly, for each tissue a 2-dimensional representation of the DAG containing the tissue cell types is built, then an ordered list of cell types is created by traversing the DAG using a depth-first approach.  
+
+This method groups cell types together based on their ontological relationships thus providing a loose lineage-based ordering.
+
+An in-depth description of this method can be found [here](./cell-type-ontology-ordering.md)
+
 
 ## Processing of expression data
 
