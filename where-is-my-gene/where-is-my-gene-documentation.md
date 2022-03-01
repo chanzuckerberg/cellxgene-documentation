@@ -12,10 +12,11 @@ To identify highly expressed genes, the user is advised to pay attention to both
 
 Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api <span style="color:blue"> [TODO - insert link to cell-centric API] </span>.
 
-<span style="color:blue">
-TODOs: <br>
-- Include examples for color of what low, medium and high is.
-</span>
+
+<span style="color:blue">TODOs: </span>
+
+<span style="color:blue"> - Include examples for color of what low, medium and high is. </span>
+
 
 ## Cell type ordering
 
@@ -30,18 +31,18 @@ Cell types are ordered according to the CL directed acyclic graph (DAG). Briefly
 
 This method groups cell types together based on their ontological relationships thus providing a loose lineage-based ordering.
 
-An in-depth description of this method can be found [here](./cell-type-ontology-ordering.md)
+An in-depth description of this method can be found [here](./cell-type-ontology-ordering.md).
 
 
 ## Processing of expression data
 
 ### Removal of duplicate cells
 
-Some data at the cellxgene portal is duplicated due to independent submissions, for example meta-analysis vs original data. All data submitted to the portal is curated to indicate whether any cell is the primary data. Only cells demarcated as primary data are included in the processing steps below.
+Some data at the cellxgene data portal is duplicated due to independent submissions, for example meta-analysis vs original data. All data submitted to the portal is curated to indicate whether any cell is the primary data. Only cells demarcated as primary data are included in the processing steps below.
 
 ### Removal of low coverage cells
 
-Any cell that has less than 500 genes expressed is excluded, this filters out about 8% of all data and does not eliminate any cell type in its entirety <span style="color:blue">[TODO - investigate if the are cell types systematically affected by this]</span>. This filter enables more consistent quantile vectors used for the normalization step.
+Any cell that has less than 500 genes expressed is excluded, this filters out about 8% of all data and does not eliminate any cell type in its entirety <span style="color:blue"> [TODO - investigate if the are cell types systematically affected by this] </span>. This filter enables more consistent quantile vectors used for the normalization step.
 
 ### Gene-length pre-normalization
 
@@ -65,9 +66,9 @@ Here is a visual representation of this method:
     <img src="./files/distribution_rankit.png" width="600" height="246"	>
  </p>
  
-This method accounts for sequencing depth by standardizing gene expression within the approximate range of -3 to 3. A high gene-cell value (>2)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<2) indicates that the gene is amongst the lowest expressed genes in that cell. 
+This method accounts for sequencing depth by scaling gene expression to the approximate range of -3 to 3. A high gene-cell value (>2)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<2) indicates that the gene is amongst the lowest expressed genes in that cell. 
 
-Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see above), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
+Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see below), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
 
 <span style="color:blue"> [TODO - include a paragraph that mentions in what studies this type of normalization has been included] </span>
 
