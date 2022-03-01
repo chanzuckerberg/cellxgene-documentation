@@ -12,6 +12,11 @@ To identify highly expressed genes, the user is advised to pay attention to both
 
 Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api <span style="color:blue"> [TODO - insert link to cell-centric API] </span>.
 
+<span style="color:blue">
+TODOs: <br>
+- Include examples for color of what low, medium and high is.
+</span>
+
 
 ## Processing of expression data
 
@@ -48,6 +53,8 @@ Here is a visual representation of this method:
 This method accounts for sequencing depth by standardizing gene expression within the approximate range of -3 to 3. A high gene-cell value (>2)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<2) indicates that the gene is amongst the lowest expressed genes in that cell. 
 
 Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see above), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
+
+<span style="color:blue"> [TODO - include a paragraph that mentions in what studies this type of normalization has been included] </span>
 
 ### Removal of noisy low expression values
 
