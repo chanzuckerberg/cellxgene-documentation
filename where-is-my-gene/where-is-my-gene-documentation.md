@@ -54,7 +54,9 @@ For each gene in our reference files, length was calculated by creating non-over
 
 ### Data normalization
 
-Gene counts are normalized using the rankit method. For a given cell in a count matrix, the values are transformed to quantiles, then those quantiles are mapped to the corresponding values in the standard normal distribution. Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
+Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression experiments (Bolstad BM et al., Zhao Y et al., Abrams ZB et al., Evans C et al.)  For a given cell in a count matrix, the values are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1. Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
+
+
 
 Here is a visual representation of this method:
 
@@ -71,6 +73,13 @@ This method accounts for sequencing depth by scaling gene expression to the appr
 Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see below), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
 
 <span style="color:blue"> [TODO - include a paragraph that mentions in what studies this type of normalization has been included] </span>
+
+##### References
+
+* Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
+* Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
+* Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
+* Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
 
 ### Removal of noisy low expression values
 
