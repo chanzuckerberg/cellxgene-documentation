@@ -4,18 +4,30 @@
 
 The dotplot is designed to reveal gross differences in expression patterns across cell types and to highlight genes that are highly expressed in certain cell types. 
 
+ <p align="center">
+    <img src="./files/illustration_legend.png">
+ </p>
+
+ <p align="center">
+    <img src="./files/illustration_main_info.png">
+ </p>
+
+
 Genes that are lowly expressed or expressed in a small percentage of cells are difficult to visually  identify in a dot plot. This is particularly important for certain marker genes that are specifically but lowly expressed in their target cell types, for example transcription factors and receptors.
 
 Given that data are quantile normalized, all expression is relative to the cells it is measured in. As such comparisons of absolute expression across cell types could be made if the number of genes measured is equal across all cells. While this assumption is violated, we attempt to minimize negative effects by excluding cells with low gene coverage (see above) thus reducing the variance in genes measured across cells. Nonetheless, caution is advised when finding subtle differences in the dot plot across cell types. 
 
 To identify highly expressed genes, the user is advised to pay attention to both the color intensity and the size of the dot. 
 
-Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api <span style="color:blue"> [TODO - insert link to cell-centric API] </span>.
+Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) [TODO - insert link to cell-centric API] </span>.
 
+![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) TODOs:
 
-<span style="color:blue">TODOs: </span>
-
-<span style="color:blue"> - Include examples for color of what low, medium and high is. </span>
+ - Include examples for color of what low, medium and high is. </span>
+ - Create headers and figures for:
+   - Values in dot plot
+   - Cell types (emphasis to parent and children present) & genes
+   - Examples of comparisons to make, and what low, medium and high looks like
 
 
 ## Cell type ordering
@@ -42,11 +54,11 @@ Some data at the cellxgene data portal is duplicated due to independent submissi
 
 ### Removal of low coverage cells
 
-Any cell that has less than 500 genes expressed is excluded, this filters out about 8% of all data and does not eliminate any cell type in its entirety <span style="color:blue"> [TODO - investigate if the are cell types systematically affected by this] </span>. This filter enables more consistent quantile vectors used for the normalization step.
+Any cell that has less than 500 genes expressed is excluded, this filters out about 8% of all data and does not eliminate any cell type in its entirety . This filter enables more consistent quantile vectors used for the normalization step.
 
 ### Gene-length pre-normalization
 
-<span style="color:Orange">WARNING - The following process has not been implemented as the feature **currently only includes data that does not require gene-length normalization.**</span>
+![#ffab24](https://via.placeholder.com/15/ffab24/000000?text=+) WARNING - The following process has not been implemented as the feature **currently only includes data that does not require gene-length normalization.**
 
 In platforms that sequence full RNA molecules, such as Smart-seq, gene counts are directly correlated with gene length. To account for this, gene counts from these technologies are divided by the corresponding gene length prior to normalization.
 
@@ -54,8 +66,9 @@ For each gene in our reference files, length was calculated by creating non-over
 
 ### Data normalization
 
-Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression experiments (Bolstad BM et al., Zhao Y et al., Abrams ZB et al., Evans C et al.)  For a given cell in a count matrix, the values are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1. Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
+Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression experiments (Bolstad BM et al., Zhao Y et al., Evans C et al.).  
 
+For a given cell in a count matrix, the read counts across genes are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1. Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
 
 
 Here is a visual representation of this method:
@@ -68,18 +81,27 @@ Here is a visual representation of this method:
     <img src="./files/distribution_rankit.png" width="600" height="246"	>
  </p>
  
-This method accounts for sequencing depth by scaling gene expression to the approximate range of -3 to 3. A high gene-cell value (>2)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<2) indicates that the gene is amongst the lowest expressed genes in that cell. 
+This method accounts for sequencing depth by scaling gene expression to the approximate range of 0 to 6. A high gene-cell value (>5)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<1) indicates that the gene is amongst the lowest expressed genes in that cell. 
 
 Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see below), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
 
 <span style="color:blue"> [TODO - include a paragraph that mentions in what studies this type of normalization has been included] </span>
 
+##### Considerations 
+
+![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) TODO
+
+- Mention that it's not useful for formal differential gene expression (Zhao Y et al.)
+- Mention that it eliminates some biological variability  (Abrams ZB et al.)
+- Mention that batch effects should decrease with increasing number of datasets, and should not be as affected
+
+
 ##### References
 
-* Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
-* Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
-* Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
-* Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
+1. Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
+1. Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
+1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
+1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
 
 ### Removal of noisy low expression values
 
