@@ -1,8 +1,8 @@
 # Where's my gene documentaion
 
-## How to interpret dotplot
+## How to interpret a gene expression dotplot
 
-The dotplot is designed to reveal gross differences in expression patterns across cell types and to highlight genes that are highly expressed in certain cell types. 
+A dotplot is designed to reveal gross differences in expression patterns across cell types and to highlight genes that are highly expressed in certain cell types. 
 
 <p align="center">
 	The color of the dot approximates average gene expression and its size represents the percentage of cells within each cell type that express the gene: 
