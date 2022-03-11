@@ -7,7 +7,7 @@ A dotplot is designed to reveal gross differences in expression patterns across 
 <p align="center">
 	The color of the dot approximates average gene expression and its size represents the percentage of cells within each cell type that express the gene: 
 	<br>
-    <img src="./files/illustration_legend.png">
+    <img src="./files/illustration_legend.png" width=180, height=180>
  </p>
 
 <p align="center"> 
@@ -55,7 +55,7 @@ An in-depth description of this method can be found [here](./cell-type-ontology-
 
  <p align="center">
 	Overview of processing steps 
- 	<img src="./files/illustration_data processing.png"">
+ 	<img src="./files/illustration_data processing.png">
  </p>
 
 ### Removal of duplicate cells
