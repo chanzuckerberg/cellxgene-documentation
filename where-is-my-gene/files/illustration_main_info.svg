@@ -28,9 +28,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      units="px"
-     inkscape:zoom="1.0649502"
-     inkscape:cx="377.01295"
-     inkscape:cy="83.571987"
+     inkscape:zoom="1"
+     inkscape:cx="146.5"
+     inkscape:cy="126"
      inkscape:window-width="1920"
      inkscape:window-height="956"
      inkscape:window-x="1440"
@@ -43,6 +43,12 @@
      fit-margin-bottom="15" />
   <defs
      id="defs2">
+    <rect
+       x="49.798583"
+       y="71.70996"
+       width="127.15238"
+       height="42.1628"
+       id="rect167106" />
     <rect
        x="559.07208"
        y="16.599527"
@@ -73,6 +79,18 @@
        width="103.46935"
        height="56.298515"
        id="rect140324" />
+    <rect
+       x="49.798583"
+       y="71.70996"
+       width="127.15238"
+       height="42.1628"
+       id="rect176196" />
+    <rect
+       x="49.798583"
+       y="71.70996"
+       width="127.15238"
+       height="42.1628"
+       id="rect189944" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -633,27 +651,27 @@ l80NeQ6FgICAgICAwNVFcCgEBAQEBAQELhvBoRAQEBAQEBC4bASHQkBAQEBAQOCy+X+IBOymFvhZ
        sodipodi:nodetypes="sssscccsss" />
     <text
        xml:space="preserve"
-       transform="matrix(0.29706382,0,0,0.29706382,-141.28507,11.887726)"
+       transform="matrix(0.29706382,0,0,0.29706382,-141.28507,10.829392)"
        id="text19581"
        style="font-style:normal;font-weight:normal;font-size:8.31284px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect19583);fill:#333333;fill-opacity:1;stroke:none"
        x="59.068359"
        y="0"><tspan
          x="562.85124"
          y="24.183666"
-         id="tspan160566"><tspan
+         id="tspan191613"><tspan
            style="font-weight:bold"
-           id="tspan160558">Most</tspan><tspan
+           id="tspan191605">Most</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160560"> cells with </tspan><tspan
+           id="tspan191607"> cells with </tspan><tspan
            style="font-weight:bold"
-           id="tspan160562">high</tspan><tspan
+           id="tspan191609">high</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160564"> </tspan></tspan><tspan
+           id="tspan191611"> </tspan></tspan><tspan
          x="584.14477"
          y="34.574716"
-         id="tspan160570"><tspan
+         id="tspan191617"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160568">expression</tspan></tspan></text>
+           id="tspan191615">expression</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.29706382,0,0,0.29706382,-142.87324,77.851892)"
@@ -663,20 +681,20 @@ l80NeQ6FgICAgICAwNVFcCgEBAQEBAQELhvBoRAQEBAQEBC4bASHQkBAQEBAQOCy+X+IBOymFvhZ
        y="0"><tspan
          x="577.1771"
          y="24.183666"
-         id="tspan160576"><tspan
+         id="tspan191623"><tspan
            style="font-weight:bold"
-           id="tspan160572">Few</tspan><tspan
+           id="tspan191619">Few</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160574"> cells with </tspan></tspan><tspan
+           id="tspan191621"> cells with </tspan></tspan><tspan
          x="564.82961"
          y="34.574716"
-         id="tspan160584"><tspan
+         id="tspan191631"><tspan
            style="font-weight:bold"
-           id="tspan160578">medium</tspan><tspan
+           id="tspan191625">medium</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160580"> </tspan><tspan
+           id="tspan191627"> </tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160582">expression</tspan></tspan></text>
+           id="tspan191629">expression</tspan></tspan></text>
     <path
        id="path79395"
        style="fill:none;stroke:#5fbcd3;stroke-width:0.449104;stroke-dasharray:0.898208, 1.79642;stroke-opacity:1"
@@ -685,31 +703,31 @@ l80NeQ6FgICAgICAwNVFcCgEBAQEBAQELhvBoRAQEBAQEBC4bASHQkBAQEBAQOCy+X+IBOymFvhZ
     <path
        id="path121824"
        style="fill:none;stroke:#5fbcd3;stroke-width:0.449104;stroke-dasharray:0.898208, 1.79642;stroke-opacity:1"
-       d="m 149.49653,15.020341 c 1.31129,0 2.36665,1.055944 2.36665,2.367227 v 6.903664 c 0,1.311281 -1.05536,2.366645 -2.36665,2.366645 H 123.87495 L 110.41737,40.849364 120.9455,24.163586 v -6.776019 c 0,-1.311282 1.05536,-2.367226 2.36665,-2.367226 z"
+       d="m 149.49653,15.020341 c 1.31129,0 2.36665,1.055944 2.36665,2.367227 v 9.284914 c 0,1.311281 -1.05536,2.366645 -2.36665,2.366645 H 123.87495 L 110.41737,40.849364 120.9455,26.544836 v -9.157269 c 0,-1.311282 1.05536,-2.367226 2.36665,-2.367226 z"
        sodipodi:nodetypes="sssscccsss" />
     <text
        xml:space="preserve"
-       transform="matrix(0.29706382,0,0,0.29706382,-44.24803,12.497847)"
+       transform="matrix(0.29706382,0,0,0.29706382,-44.24803,11.439513)"
        id="text122192"
        style="font-style:normal;font-weight:normal;font-size:8.31284px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect122194);fill:#333333;fill-opacity:1;stroke:none"
        x="59.068359"
        y="0"><tspan
          x="565.9986"
          y="24.183666"
-         id="tspan160590"><tspan
+         id="tspan191637"><tspan
            style="font-weight:bold"
-           id="tspan160586">Very few</tspan><tspan
+           id="tspan191633">Very few</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160588"> cells with </tspan></tspan><tspan
+           id="tspan191635"> cells with </tspan></tspan><tspan
          x="573.42658"
          y="34.574716"
-         id="tspan160598"><tspan
+         id="tspan191645"><tspan
            style="font-weight:bold"
-           id="tspan160592">high</tspan><tspan
+           id="tspan191639">high</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160594"> </tspan><tspan
+           id="tspan191641"> </tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160596">expression</tspan></tspan></text>
+           id="tspan191643">expression</tspan></tspan></text>
     <path
        id="path140308"
        style="fill:none;stroke:#5fbcd3;stroke-width:0.449104;stroke-dasharray:0.898208, 1.79642;stroke-opacity:1"
@@ -717,26 +735,66 @@ l80NeQ6FgICAgICAwNVFcCgEBAQEBAQELhvBoRAQEBAQEBC4bASHQkBAQEBAQOCy+X+IBOymFvhZ
        sodipodi:nodetypes="sssscccsss" />
     <text
        xml:space="preserve"
-       transform="matrix(0.29706382,0,0,0.29706382,-50.570318,77.248058)"
+       transform="matrix(0.29706382,0,0,0.29706382,-50.570318,76.189724)"
        id="text140322"
        style="font-style:normal;font-weight:normal;font-size:8.31284px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect140324);fill:#333333;fill-opacity:1;stroke:none"
        x="59.068359"
        y="0"><tspan
          x="568.29263"
          y="24.183666"
-         id="tspan160604"><tspan
+         id="tspan191651"><tspan
            style="font-weight:bold"
-           id="tspan160600">Most </tspan><tspan
+           id="tspan191647">Most </tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160602">cells cells with </tspan></tspan><tspan
+           id="tspan191649">cells cells with </tspan></tspan><tspan
          x="568.08156"
          y="34.574716"
-         id="tspan160612"><tspan
+         id="tspan191659"><tspan
            style="font-weight:bold"
-           id="tspan160606">meidum</tspan><tspan
+           id="tspan191653">meidum</tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160608"> </tspan><tspan
+           id="tspan191655"> </tspan><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan160610">expression</tspan></tspan></text>
+           id="tspan191657">expression</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,16.419104,3.5740973)"
+       id="text167104"
+       style="font-style:normal;font-weight:normal;font-size:6.66667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect167106);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="49.798828"
+         y="77.793143"
+         id="tspan191661">Strong marker genes</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,106.25527,4.1032652)"
+       id="text176194"
+       style="font-style:normal;font-weight:normal;font-size:6.66667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect176196);fill:#000000;fill-opacity:1;stroke:none"
+       x="42.825542"
+       y="0"><tspan
+         x="79.546859"
+         y="77.793143"
+         id="tspan191667"><tspan
+           style="font-style:italic;-inkscape-font-specification:'sans-serif Italic'"
+           id="tspan191663">Some</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan191665"> marker genes
+</tspan></tspan><tspan
+         x="70.236959"
+         y="86.126478"
+         id="tspan191671"><tspan
+           style="fill:#ff0000"
+           id="tspan191669">Warning: hard to observe</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,100.90272,68.891023)"
+       id="text189942"
+       style="font-style:normal;font-weight:normal;font-size:6.66667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect189944);fill:#000000;fill-opacity:1;stroke:none"
+       x="42.825542"
+       y="0"><tspan
+         x="81.187485"
+         y="77.793143"
+         id="tspan191675"><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan191673">Most marker genes</tspan></tspan></text>
   </g>
 </svg>
