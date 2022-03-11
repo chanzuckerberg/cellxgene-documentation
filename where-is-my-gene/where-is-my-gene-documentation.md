@@ -95,8 +95,6 @@ This method accounts for sequencing depth by scaling gene expression to the appr
 
 Rankit normalization compresses highly expressed genes to the right tail of the standard normal distribution (see below), thus providing ideal values for using a color representation of gene expression and avoiding saturation that would otherwise be present.
 
-<span style="color:blue"> [TODO - include a paragraph that mentions in what studies this type of normalization has been included] </span>
-
 ##### Considerations 
 
 ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) TODO
