@@ -11,9 +11,9 @@ A dotplot is designed to reveal gross differences in expression patterns across 
  </p>
 
 <p align="center"> 
-The combination of these metrics allows to make qualitative assessments of gene expression:
-<br>
-<img src="./files/illustration_main_info.png">
+	The combination of these metrics allows to make qualitative assessments of gene expression:
+	<br>
+	<img src="./files/illustration_main_info.png">
     
  </p>
 
@@ -52,6 +52,11 @@ An in-depth description of this method can be found [here](./cell-type-ontology-
 
 
 ## Processing of expression data
+
+ <p align="center">
+	Overview of processing steps 
+ 	<img src="./files/illustration_data processing.png"">
+ </p>
 
 ### Removal of duplicate cells
 
@@ -108,7 +113,7 @@ Rankit normalization compresses highly expressed genes to the right tail of the 
 1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
 1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
 
-### Removal of noisy low expression values
+### Removal of noisy ultra-low expression values
 
 After applying normalization, any gene/cell combination that had counts less or equal than 3 are set to missing data. This allows for removal of noise due to ultra-lowly expressed genes and provides a cleaner visualization.
 
