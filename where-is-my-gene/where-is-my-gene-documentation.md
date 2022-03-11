@@ -4,12 +4,17 @@
 
 The dotplot is designed to reveal gross differences in expression patterns across cell types and to highlight genes that are highly expressed in certain cell types. 
 
- <p align="center">
+<p align="center">
+	The color of the dot approximates average gene expression and its size represents the percentage of cells within each cell type that express the gene: 
+	<br>
     <img src="./files/illustration_legend.png">
  </p>
 
- <p align="center">
-    <img src="./files/illustration_main_info.png">
+<p align="center"> 
+The combination of these metrics allows to make qualitative assessments of gene expression:
+<br>
+<img src="./files/illustration_main_info.png">
+    
  </p>
 
 
