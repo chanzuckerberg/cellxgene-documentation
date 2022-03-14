@@ -11,7 +11,7 @@ Dot plots visualize two values across two dimensions: color and size (Figure 1).
 
 
 <p align="center">
-    <img src="./files/illustration_legend.png">
+    <img src="./files/illustration_legend.png" width = 280 height = 308>
     <br>
     <b>Figure 1.</b> Two metrics are represented in gene expression dot plots, gene expression and percentage of expressing cells.
  </p>
@@ -32,7 +32,7 @@ The data used to create the averages for the dot plot is [quantile normalized](#
 
 
 <p align="center"> 
-	<img src="./files/illustration_expression_levels.png" width=663 height=313>
+	<img src="./files/illustration_expression_levels.png" width=683 height=333>
     <br>
     <b>Figure 3.</b> Examples of high, medium and low expression. 
  </p>
