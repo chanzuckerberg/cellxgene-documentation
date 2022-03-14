@@ -32,7 +32,7 @@ The data used to create the averages for the dot plot is [quantile normalized](#
 
 
 <p align="center"> 
-	<img src="./files/illustration_expression_levels.png" width=683 height=333>
+	<img src="./files/illustration_expression_levels.png" width=783 height=433>
     <br>
     <b>Figure 3.</b> Examples of high, medium and low expression. 
  </p>
