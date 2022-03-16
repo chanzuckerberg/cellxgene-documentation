@@ -6,7 +6,7 @@
 
 A dot plot can reveal gross differences in expression patterns across cell types and highlights genes that are moderately or highly expressed in certain cell types. 
 
-Dot plots visualize two values across two dimensions: color and size (Figure 1). The color of the dot approximates average gene expression. Its size represents the percentage of cells within each cell type that express the gene.
+Dot plots visualize two values across two dimensions: color and size (Figure 1). The color of the dot approximates average gene expression. Its size represents the percentage of cells within each cell type that expresses the gene.
 
 
 
@@ -100,12 +100,10 @@ For each gene in our reference files, length was calculated by creating non-over
 
 ### Data normalization
 
-Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression experiments (Bolstad BM et al., Evans C et al., The GTEx Consortium.).  
+Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression data (Bolstad BM et al., Evans C et al., The GTEx Consortium.).  
 
-For a given cell in a count matrix, the read counts across genes are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1. Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
+For a given cell in a count matrix, the read counts across genes are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1 (Figure 6). Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
 
-
-Here is a visual representation of this method:
 
  <p align="center">
     <img src="./files/distribution_read_counts.png" width="600" height="246">
@@ -113,6 +111,8 @@ Here is a visual representation of this method:
  
   <p align="center">
     <img src="./files/distribution_rankit.png" width="600" height="246"	>
+    <br>
+    <b> Figure 6. </b> Visual representation of rankit normalization.
  </p>
  
 This method accounts for sequencing depth by scaling gene expression to the approximate range of 0 to 6. A high gene-cell value (>5)  indicates that the gene is amongst genes that are the highest expressed in that cell, and similarly a low value (<1) indicates that the gene is amongst the lowest expressed genes in that cell. 
@@ -121,21 +121,13 @@ Rankit normalization compresses highly expressed genes to the right tail of the 
 
 ##### Considerations 
 
-Given that the normalization is a form of quantile normalization using a constant target distribution, there a few important considerations while working with these values:
+Given that the normalization is a form of quantile normalization that uses a constant target distribution, there are a few important considerations while working with these values:
 
 - These values transform the biological/technical variance of gene expression to a constant variance from a normal distribution. 
 - It has been proven that quantile normalization reduces technical variance and to a lesser extent biological variance  (Abrams ZB et al.).
 - Individual gene expression values can produce spurious differential gene expression analysis (Zhao Y et al.).
-- This normalization is not designed to specifically account for batch effects, however the use of constant target distribution mitigates batch effects when calculating average gene expression. This mitigation is stronger as the number of datasets per tissue increases. 
+- This normalization is not designed to specifically account for batch effects, however the use of a constant target distribution mitigates batch effects when calculating average gene expression. This mitigation is stronger as the number of datasets per tissue increases. 
 
-
-##### References
-
-1. Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
-1. Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
-1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
-1. The GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues. Science. 2020
-1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
 
 ### Removal of noisy ultra-low expression values
 
@@ -148,3 +140,12 @@ For each gene/cell type combination the following values are represented in the 
 * Gene expression (dot color) – the average rankit-normalized gene expression among genes that have non-zero values.
 * Scaled gene expression (dot color) – scaled mean expression to the range [0,1]. Scaling is done by assigning the minimum value in the current view to 0 and the max is assigned to 1. 
 * Expressing cells (dot size) – percentage of cells of the cell type expressing the gene, in parentheses is shown the absolute number of cells expressing the gene. These numbers are calculated after the following filters have been applied: "Removal of low coverage cells" and "Removal of noisy low expression values".
+
+### References
+
+1. Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
+1. Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
+1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
+1. The GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues. Science. 2020
+1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
+
