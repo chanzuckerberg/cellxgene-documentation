@@ -1,6 +1,6 @@
-# Where's my gene documentaion
+# scExpression documentation
 
-## How to interpret a gene expression dotplot
+## How to interpret a gene expression dot plot
 
 ### The dot plot basics
 
@@ -16,19 +16,19 @@ Dot plots visualize two values across two dimensions: color and size (Figure 1).
     <b>Figure 1.</b> Two metrics are represented in gene expression dot plots, gene expression and percentage of expressing cells.
  </p>
 
-The combination of these metrics in grid of genes by cell types allows to make qualitative assessments of gene expression (Figure 2).
+The combination of these metrics in a grid of genes by cell types allows to make qualitative assessments of gene expression (Figure 2).
 
 Genes that are lowly expressed or expressed in a small percentage of cells are difficult to visually  identify in a dot plot. This is particularly important for certain marker genes that are specifically but lowly expressed in their target cell types, for example transcription factors and receptors.
 
 <p align="center"> 
 	<img src="./files/illustration_main_info.png">
     <br>
-    <b>Figure 2.</b> Types of qualitatively assessments possible in a dot plot. 
+    <b>Figure 2.</b> Types of possible qualitatively assessments in a dot plot. 
  </p>
  
 ### How to make sense of normalized values
 
-The data used to create the averages for the dot plot is [quantile normalized](#Data-normalization) and it ranges from 0 to 6. Roughly, low expression has normalized values lower than 2, medium expression ranges from 2 to 4, and high expression is higher than 4 (Figure 3). These values are used for the dot plot color scheme and are constant and comparable across different dot plots. Additionally, the user has the ability to switch to a relative scale that maps the lowest and highest expression values in a dot plot to the min and max colors, thus providing a wider color range for what's shown in a dot plot. 
+The data used to create the averages for the dot plot is quantile normalized  and it ranges from 0 to 6 ([see below](#Data-normalization) for details). Roughly, low expression has normalized values lower than 2, medium expression ranges from 2 to 4, and high expression is higher than 4 (Figure 3). These values are used for the dot plot color scheme and are constant and comparable across different dot plots. Additionally, the user has the ability to switch to a relative scale that maps the lowest and highest expression values in a dot plot to the min and max colors, thus providing a wider color range for what's shown in a dot plot. 
 
 
 <p align="center"> 
@@ -43,7 +43,7 @@ The examples in Figure 3 have a relatively constant percentage of cells expressi
 
 Cell types in the dot plot (rows) are ordered by default with an [algorithm](#Cell-type-ordering) that preserves relationships in the Cell Type ontology (CL). Thus cell types from the same lineage are roughly shown consecutively.
 
-All cell types from a given tissue are shown as originally annotated in the dataset-of-origin. This leads to a scenario where parent and children cell types may be present in the dot plot, but they are independent observations and the former is not a superset of the latter (Figure 4)
+All cell types from a given tissue are shown as originally annotated in the dataset-of-origin. This leads to scenarios where parent and children cell types may be present in the dot plot, but they are independent observations and the former is not a superset of the latter (Figure 4).
 
 <p align="center"> 
 	<img src="./files/illustration_parent_children.png" width=613 height=263>
@@ -100,7 +100,7 @@ For each gene in our reference files, length was calculated by creating non-over
 
 ### Data normalization
 
-Read counts are normalized using a modification of rankit method which is a variation of quantile normalization used for gene expression data (Bolstad BM et al., Evans C et al., The GTEx Consortium.).  
+Read counts are normalized using a modification of the rankit method which is a variation of quantile normalization used for gene expression data (Bolstad BM et al., Evans C et al., The GTEx Consortium.).  
 
 For a given cell in a count matrix, the read counts across genes are transformed to quantiles, then those quantiles are mapped to the corresponding values of a normal distribution with mean = 3 and variance = 1 (Figure 6). Normalized matrices from multiple datasets of the same tissue are concatenated along the gene axis.
 
@@ -135,7 +135,7 @@ After applying normalization, any gene/cell combination that had counts less or 
 
 ### Summarization of data in dot plot
 
-For each gene/cell type combination the following values are represented in the dotplot, either visually or in text upon hover.
+For each gene/cell type combination the following values are represented in the dot plot, either visually or in text upon hover.
 
 * Gene expression (dot color) – the average rankit-normalized gene expression among genes that have non-zero values.
 * Scaled gene expression (dot color) – scaled mean expression to the range [0,1]. Scaling is done by assigning the minimum value in the current view to 0 and the max is assigned to 1. 
