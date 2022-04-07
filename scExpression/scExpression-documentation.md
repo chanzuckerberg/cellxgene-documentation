@@ -143,9 +143,9 @@ For each gene/cell type combination the following values are represented in the 
 
 ### References
 
-1. Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019.
-1. Bolstad BM et al. A comparison ofnormalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002.
-1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018.
-1. The GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues. Science. 2020
-1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020.
+1. Abrams ZB et al. A protocol to evaluate RNA sequencing normalization methods. BMC Bioinformatics. 2019. [PubMed](https://pubmed.ncbi.nlm.nih.gov/31861985/).
+1. Bolstad BM et al. A comparison of normalization methods for high density oligonucleotide array data based on variance and bias. Bioinformatics. 2002. [PubMed](https://pubmed.ncbi.nlm.nih.gov/12538238/).
+1. Evans C et al. Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions Ciaran. Briefings in Bioinformatics. 2018. [PubMed] (https://pubmed.ncbi.nlm.nih.gov/28334202/).
+1. The GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues. Science. 2020. [PubMed] (https://pubmed.ncbi.nlm.nih.gov/32913098/).
+1. Zhao Y et al. How to do quantile normalization correctly for gene expression data analyses. Scientific Reports. 2020. [PubMed] (https://pubmed.ncbi.nlm.nih.gov/32968196/).
 
