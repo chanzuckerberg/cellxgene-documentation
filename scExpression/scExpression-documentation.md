@@ -57,7 +57,7 @@ Given that data are [quantile normalized](#Data-normalization) all expression is
 
 Nonetheless, caution is advised when finding subtle differences in the dot plot across cell types. 
 
-Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) [TODO - insert link to cell-centric API] </span>.
+Users interested in evaluating the pre-normalized absolute expression data can access it through our cell api (coming soon).
 
 ## Cell type ordering
 
