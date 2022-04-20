@@ -131,7 +131,7 @@ Given that the normalization is a form of quantile normalization that uses a con
 
 ### Removal of noisy ultra-low expression values
 
-After applying normalization, any gene/cell combination that had counts less or equal than 3 are set to missing data. This allows for removal of noise due to ultra-lowly expressed genes and provides a cleaner visualization.
+After applying normalization, any gene/cell combination that had counts less or equal than 2 are set to missing data. This allows for removal of noise due to ultra-lowly expressed genes and provides a cleaner visualization.
 
 ### Summarization of data in dot plot
 
