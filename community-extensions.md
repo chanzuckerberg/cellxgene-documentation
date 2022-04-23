@@ -14,7 +14,10 @@ Please note that cellxgene does not have public APIs. Our development may break 
 
 ### cellxgene-VIP \(Visualization in Plugin\)
 
-[cellxgene-VIP](https://github.com/interactivereport/cellxgene_VIP) enables cellxgene to generate violin, stacked violin, stacked bar, heatmap, volcano, embedding, dot, track, density, 2D density, sankey and dual-gene plot in high-resolution SVG/PNG format. It also performs differential gene expression analysis and provides a Command Line Interface \(CLI\) for advanced users to perform analysis using python and R.
+[cellxgene-VIP](https://github.com/interactivereport/cellxgene_VIP) enables cellxgene to generate violin, stacked violin, stacked bar, heatmap, volcano, embedding, dot, track, density, 2D density, sankey and dual-gene plot in high-resolution SVG/PNG format. It also performs differential gene expression analysis and provides a Command Line Interface \(CLI\) for advanced users to perform analysis using python and R. It supports spatial transcriptomics and multiome data visualization as well. See demos at https://cellxgenevip-ms.bxgenomics.com , https://cellxgenevip-spatial.bxgenomics.com, and https://cellxgenevip-multiome.bxgenomics.com.
+
+### CellDepot: A unified repository for scRNAseq data and visual exploration
+[CellDepot](https://github.com/interactivereport/CellDepot) containing over 270 datasets from 8 species and many tissues serves as an integrated web application to empower scientists in exploring single-cell RNA-seq (scRNA-seq) datasets and comparing the datasets among various studies through a user-friendly interface with advanced visualization and analytical capabilities. You can install locally to host multiple datasets.
 
 ### Galaxy
 
