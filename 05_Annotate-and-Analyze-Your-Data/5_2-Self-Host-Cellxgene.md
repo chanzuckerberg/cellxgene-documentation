@@ -125,9 +125,6 @@ You can create a Heroku app via [our provided Dockerfile]([https://github.com/ch
 You may have to tweak the Docker file like so:
 
 ```
-
-
-```
 1 FROM ubuntu:bionic
 2
 3 ENV LC_ALL=C.UTF-8
@@ -140,13 +137,7 @@ You may have to tweak the Docker file like so:
 10 # ENTRYPOINT ["cellxgene"]  # Heroku doesn't work well with ENTRYPOINT
 ```
 
-
-```
-
 and provide a `heroku.yml` file similar to this:
-
-```
-
 
 ```
 1 build:
@@ -157,10 +148,6 @@ and provide a `heroku.yml` file similar to this:
 6    command:
 7     - cellxgene launch --host 0.0.0.0 --port $PORT $DATASET # the DATATSET config var must be defined in your dashboard settings.
 ```
-
-
-```
-
 
 ### What is Heroku?
 
