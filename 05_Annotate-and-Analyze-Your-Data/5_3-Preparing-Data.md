@@ -60,12 +60,13 @@ You can control which steps to run and their methods (when applicable), via the 
 ## What is ‘cellxgene prepare’ not?
 
 ‘cellxgene prepare’ is *not* meant as a way to formally process or analyze your data. It's simply a utility for quickly wrangling your data into cellxgene-compatible format and computing a "vanilla" embedding so you can try out ‘cellxgene’ and get a general sense of a dataset.
+
 ## Quickstart for cellxgene prepare
 
 ```
 pip3 install cellxgene[prepare]
 cellxgene prepare dataset.h5ad --output=dataset-processed.h5ad
-``
+```
 
 This will load the input data, perform PCA and nearest neighbor calculations, compute `UMAP` and `tSNE` embeddings and `louvain` cluster assignments, and save the results in a new file called `dataset-processed.h5ad` that can be loaded using `cellxgene launch`.
 
