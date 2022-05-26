@@ -3,9 +3,23 @@
 We’ve compiled a list of the questions we get most frequently. Check them out below:
 
 
+## Cellxgene Data Portal
+
+## scExpression
+
+### How is scExpression Integration Performed?
+
+Please see the [scExpression documentation](https://github.com/chanzuckerberg/cellxgene-documentation/blob/new-doc-structure/04_Analyze-Public-Data/4_2-scExpression-Tutorials/scExpression-documentation.md).
+
+## Cellxgene Desktop Explorer
+
 ### I tried to `pip install cellxgene` and got a weird error I don't understand
 
 This may happen, especially as we work out bugs in our installation process! Please create a new [Github issue](https://github.com/chanzuckerberg/cellxgene/issues), explain what you did, and include all the error messages you saw. It'd also be super helpful if you call `pip freeze` and include the full output alongside your issue.
+
+### What are the requirements for an anndata object to be consumed by cellxgene?
+
+Take a look at the [data format requirements](https://github.com/chanzuckerberg/cellxgene-documentation/blob/new-doc-structure/05_Annotate-and-Analyze-Your-Data/5_3-Preparing-Data.md#data-format-requirements)
 
 ### I have a BIG dataset, how can I make cellxgene run as fast as possible?
 
